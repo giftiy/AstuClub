@@ -1,0 +1,3161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ASTU Student Union - Home</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#dc2626',secondary:'#1e40af'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+<style>
+:where([class^="ri-"])::before {
+content: "\f3c2";
+}
+@keyframes fadeInUp {
+from {
+opacity: 0;
+transform: translateY(30px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+@keyframes fadeInLeft {
+from {
+opacity: 0;
+transform: translateX(-30px);
+}
+to {
+opacity: 1;
+transform: translateX(0);
+}
+}
+@keyframes fadeInRight {
+from {
+opacity: 0;
+transform: translateX(30px);
+}
+to {
+opacity: 1;
+transform: translateX(0);
+}
+}
+@keyframes slideInFromBottom {
+from {
+opacity: 0;
+transform: translateY(50px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+@keyframes bounce {
+0%, 20%, 53%, 80%, 100% {
+transform: translateY(0);
+}
+40%, 43% {
+transform: translateY(-10px);
+}
+70% {
+transform: translateY(-5px);
+}
+90% {
+transform: translateY(-2px);
+}
+}
+@keyframes pulse {
+0% {
+transform: scale(1);
+}
+50% {
+transform: scale(1.05);
+}
+100% {
+transform: scale(1);
+}
+}
+@keyframes typewriter {
+from {
+width: 0;
+}
+to {
+width: 100%;
+}
+}
+@keyframes blink {
+0%, 50% {
+border-color: transparent;
+}
+51%, 100% {
+border-color: #dc2626;
+}
+}
+.animate-fade-in-up {
+animation: fadeInUp 0.8s ease-out forwards;
+}
+.animate-fade-in-left {
+animation: fadeInLeft 0.8s ease-out forwards;
+}
+.animate-fade-in-right {
+animation: fadeInRight 0.8s ease-out forwards;
+}
+.animate-slide-in-bottom {
+animation: slideInFromBottom 0.8s ease-out forwards;
+}
+.animate-bounce {
+animation: bounce 2s infinite;
+}
+.animate-pulse {
+animation: pulse 2s infinite;
+}
+.typewriter {
+overflow: hidden;
+border-right: 2px solid #dc2626;
+white-space: nowrap;
+margin: 0 auto;
+animation: typewriter 3s steps(40, end), blink 0.75s step-end infinite;
+}
+.hover-lift {
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.hover-lift:hover {
+transform: translateY(-8px);
+box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+.scale-on-hover {
+transition: transform 0.3s ease;
+}
+.scale-on-hover:hover {
+transform: scale(1.05);
+}
+.gradient-text {
+background: linear-gradient(45deg, #dc2626, #1e40af);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+.ai-assistant-floating {
+position: fixed;
+bottom: 2rem;
+right: 2rem;
+z-index: 1000;
+}
+.ai-chat-window {
+position: fixed;
+bottom: 6rem;
+right: 2rem;
+width: 350px;
+max-height: 500px;
+z-index: 1000;
+transform: translateY(20px);
+opacity: 0;
+transition: all 0.3s ease;
+}
+.ai-chat-window.show {
+transform: translateY(0);
+opacity: 1;
+}
+.chat-messages {
+max-height: 300px;
+overflow-y: auto;
+}
+.message {
+animation: fadeInUp 0.3s ease-out;
+}
+.typing-indicator {
+display: flex;
+align-items: center;
+padding: 0.5rem;
+}
+.typing-dot {
+width: 8px;
+height: 8px;
+border-radius: 50%;
+background-color: #6b7280;
+margin: 0 2px;
+animation: typing 1.4s infinite ease-in-out;
+}
+.typing-dot:nth-child(1) {
+animation-delay: -0.32s;
+}
+.typing-dot:nth-child(2) {
+animation-delay: -0.16s;
+}
+@keyframes typing {
+0%, 80%, 100% {
+transform: scale(0);
+opacity: 0.5;
+}
+40% {
+transform: scale(1);
+opacity: 1;
+}
+}
+.intersection-observer {
+opacity: 0;
+transform: translateY(50px);
+transition: all 0.8s ease-out;
+}
+.intersection-observer.visible {
+opacity: 1;
+transform: translateY(0);
+}
+.stagger-animation:nth-child(1) { animation-delay: 0.1s; }
+.stagger-animation:nth-child(2) { animation-delay: 0.2s; }
+.stagger-animation:nth-child(3) { animation-delay: 0.3s; }
+.stagger-animation:nth-child(4) { animation-delay: 0.4s; }
+.stagger-animation:nth-child(5) { animation-delay: 0.5s; }
+.stagger-animation:nth-child(6) { animation-delay: 0.6s; }
+</style>
+</head>
+<body class="bg-white">
+<header class="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-100">
+<nav class="w-full px-4 sm:px-6 py-4">
+<div class="max-w-7xl mx-auto flex items-center justify-between">
+<div class="flex items-center space-x-4 sm:space-x-8">
+<div class="text-xl sm:text-2xl font-['Pacifico'] text-primary cursor-pointer">ASTU</div>
+<div class="hidden lg:flex items-center space-x-6">
+<a href="#home" class="text-gray-700 hover:text-primary transition-colors cursor-pointer">Home</a>
+<a href="#about" class="text-gray-700 hover:text-primary transition-colors cursor-pointer">About</a>
+<a href="#announcements" class="text-gray-700 hover:text-primary transition-colors cursor-pointer">Announcements</a>
+<a href="#leadership" class="text-gray-700 hover:text-primary transition-colors cursor-pointer">Leadership</a>
+<a href="#clubs" class="text-gray-700 hover:text-primary transition-colors cursor-pointer">Clubs</a>
+<a href="#contact" class="text-gray-700 hover:text-primary transition-colors cursor-pointer">Contact</a>
+</div>
+</div>
+<div class="flex items-center space-x-2 sm:space-x-4">
+<div class="relative hidden sm:block">
+<input id="main-search" type="text" placeholder="Search..." class="pl-10 pr-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary w-32 md:w-48 lg:w-56">
+<div class="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 flex items-center justify-center">
+<i class="ri-search-line text-gray-400 text-sm"></i>
+</div>
+</div>
+<button id="admin-login-btn" class="bg-primary text-white px-3 sm:px-4 py-2 rounded-button text-xs sm:text-sm hover:bg-primary/90 transition-colors whitespace-nowrap !rounded-button cursor-pointer">
+Admin Login
+</button>
+<button id="mobile-menu-btn" class="lg:hidden w-8 h-8 flex items-center justify-center cursor-pointer">
+<i class="ri-menu-line text-gray-700"></i>
+</button>
+</div>
+</div>
+<div id="mobile-menu" class="hidden lg:hidden mt-4 pb-4 border-t border-gray-200">
+<div class="flex flex-col space-y-4 pt-4">
+<a href="#home" class="text-gray-700 hover:text-primary transition-colors cursor-pointer">Home</a>
+<a href="#about" class="text-gray-700 hover:text-primary transition-colors cursor-pointer">About</a>
+<a href="#announcements" class="text-gray-700 hover:text-primary transition-colors cursor-pointer">Announcements</a>
+<a href="#leadership" class="text-gray-700 hover:text-primary transition-colors cursor-pointer">Leadership</a>
+<a href="#clubs" class="text-gray-700 hover:text-primary transition-colors cursor-pointer">Clubs</a>
+<a href="#contact" class="text-gray-700 hover:text-primary transition-colors cursor-pointer">Contact</a>
+<div class="relative sm:hidden">
+<input id="mobile-search" type="text" placeholder="Search..." class="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary">
+<div class="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 flex items-center justify-center">
+<i class="ri-search-line text-gray-400 text-sm"></i>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<main>
+<section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden" style="background-image: url('https://readdy.ai/api/search-image?query=modern%20university%20campus%20with%20students%20walking%20together%20in%20bright%20daylight%2C%20clean%20architecture%20buildings%20in%20background%2C%20vibrant%20blue%20sky%20with%20white%20clouds%2C%20professional%20photography%20style%2C%20left%20side%20has%20soft%20white%20gradient%20overlay%20for%20text%20placement%2C%20inspiring%20educational%20atmosphere%2C%20contemporary%20design%2C%20high%20quality%20detailed%20image&width=1920&height=1080&seq=hero001&orientation=landscape'); background-size: cover; background-position: center;">
+<div class="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-transparent"></div>
+<!-- Floating Graphics -->
+<div class="absolute top-20 left-10 w-20 h-20 bg-primary/20 rounded-full animate-pulse" style="animation-delay: 5s;"></div>
+<div class="absolute top-32 right-40 w-8 h-8 bg-gradient-to-br from-primary to-secondary rotate-45 animate-pulse"></div>
+
+<!-- Geometric Shapes -->
+
+
+<div class="relative z-10 w-full">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
+<div class="max-w-2xl">
+<h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight typewriter">
+ASTU Student Union
+</h1>
+<p class="text-base sm:text-lg md:text-xl text-gray-700 mb-6 sm:mb-8 leading-relaxed animate-fade-in-up" style="animation-delay: 3.5s; opacity: 0; animation-fill-mode: forwards;">
+Empowering students, building communities, and creating lasting impact through leadership, innovation, and unity.
+</p>
+<div class="flex flex-col sm:flex-row gap-3 sm:gap-4 animate-fade-in-up" style="animation-delay: 4s; opacity: 0; animation-fill-mode: forwards;">
+<button id="explore-btn" class="bg-primary text-white px-6 sm:px-8 py-3 sm:py-4 rounded-button text-base sm:text-lg font-medium hover:bg-primary/90 transition-all duration-300 whitespace-nowrap !rounded-button cursor-pointer hover-lift">
+<i class="ri-rocket-line mr-2"></i>Explore Opportunities
+</button>
+<button id="join-club-btn" class="border-2 border-primary text-primary px-6 sm:px-8 py-3 sm:py-4 rounded-button text-base sm:text-lg font-medium hover:bg-primary hover:text-white transition-all duration-300 whitespace-nowrap !rounded-button cursor-pointer hover-lift">
+<i class="ri-team-line mr-2"></i>Join a Club
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="about" class="py-12 sm:py-16 lg:py-20 bg-gray-50 relative overflow-hidden">
+<!-- Background Graphics -->
+<div class="absolute top-0 left-0 w-full h-full opacity-5">
+<img src="https://readdy.ai/api/search-image?query=abstract%20geometric%20pattern%20with%20interconnected%20lines%20and%20nodes%20representing%20connection%20and%20community%2C%20minimalist%20design%2C%20light%20blue%20and%20gray%20colors%2C%20modern%20vector%20style%2C%20educational%20theme%2C%20subtle%20background%20pattern%20for%20university%20website&width=1920&height=800&seq=about_bg&orientation=landscape" alt="" class="w-full h-full object-cover">
+</div>
+<div class="absolute top-10 right-10 w-32 h-32 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-full blur-3xl"></div>
+<div class="absolute bottom-10 left-10 w-40 h-40 bg-gradient-to-br from-secondary/10 to-primary/10 rounded-full blur-3xl"></div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+<div class="text-center mb-12 sm:mb-16">
+<div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-primary to-secondary rounded-full mb-6 mx-auto animate-pulse">
+<i class="ri-community-line text-white text-3xl"></i>
+</div>
+<h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">Your Voice, Your Future</h2>
+<p class="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto px-4">
+The ASTU Student Union serves as the bridge between students and administration, advocating for your rights, organizing events, and fostering a vibrant campus community that enhances your university experience.
+</p>
+</div>
+<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+<div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer hover-lift intersection-observer stagger-animation">
+<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6 scale-on-hover">
+<i class="ri-megaphone-line text-primary text-xl"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-4">Student Advocacy</h3>
+<p class="text-gray-600">
+We represent student interests in university decisions, ensuring your voice is heard in policies that affect your academic journey.
+</p>
+</div>
+<div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer hover-lift intersection-observer stagger-animation">
+<div class="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-6 scale-on-hover">
+<i class="ri-calendar-event-line text-secondary text-xl"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-4">Campus Events</h3>
+<p class="text-gray-600">
+From cultural festivals to academic conferences, we organize diverse events that enrich your university experience and build lasting memories.
+</p>
+</div>
+<div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer hover-lift intersection-observer stagger-animation">
+<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6 scale-on-hover">
+<i class="ri-group-line text-primary text-xl"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-4">Community Building</h3>
+<p class="text-gray-600">
+We foster connections between students through clubs, societies, and initiatives that create a supportive and inclusive campus environment.
+</p>
+</div>
+</div>
+</div>
+</section>
+<section id="quick-access" class="py-20 bg-white relative overflow-hidden">
+<!-- Decorative Graphics -->
+<div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-primary/5 to-transparent rounded-full -translate-y-48 translate-x-48"></div>
+<div class="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-secondary/5 to-transparent rounded-full translate-y-40 -translate-x-40"></div>
+<div class="max-w-7xl mx-auto px-6 relative z-10">
+<div class="text-center mb-16">
+<div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl mb-6 mx-auto animate-bounce">
+<i class="ri-dashboard-line text-primary text-2xl"></i>
+</div>
+<h2 class="text-4xl font-bold text-gray-900 mb-4">Quick Access</h2>
+<p class="text-xl text-gray-600">
+Find what you need quickly with our streamlined navigation
+</p>
+</div>
+<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+<div id="announcements-card" class="group cursor-pointer intersection-observer stagger-animation">
+<div class="bg-gradient-to-br from-primary to-primary/80 p-8 rounded-xl text-white hover:shadow-2xl transition-all duration-500 group-hover:scale-105 hover-lift">
+<div class="w-16 h-16 bg-white/20 rounded-lg flex items-center justify-center mb-6 animate-bounce">
+<i class="ri-notification-3-line text-white text-2xl"></i>
+</div>
+<h3 class="text-2xl font-semibold mb-4 gradient-text">Announcements</h3>
+<p class="text-white/90 mb-6">
+Stay updated with the latest news, events, and important notices from the Student Union and university administration.
+</p>
+<div class="flex items-center text-white font-medium">
+View Latest Updates
+<i class="ri-arrow-right-line ml-2 group-hover:translate-x-2 transition-transform duration-300"></i>
+</div>
+</div>
+</div>
+<div id="clubs-card" class="group cursor-pointer intersection-observer stagger-animation">
+<div class="bg-gradient-to-br from-secondary to-secondary/80 p-8 rounded-xl text-white hover:shadow-2xl transition-all duration-500 group-hover:scale-105 hover-lift">
+<div class="w-16 h-16 bg-white/20 rounded-lg flex items-center justify-center mb-6 animate-pulse">
+<i class="ri-team-line text-white text-2xl"></i>
+</div>
+<h3 class="text-2xl font-semibold mb-4">Student Clubs</h3>
+<p class="text-white/90 mb-6">
+Discover and join over 50 active clubs and societies that match your interests, from academics to sports and arts.
+</p>
+<div class="flex items-center text-white font-medium">
+Explore All Clubs
+<i class="ri-arrow-right-line ml-2 group-hover:translate-x-2 transition-transform duration-300"></i>
+</div>
+</div>
+</div>
+<div id="contact-card" class="group cursor-pointer intersection-observer stagger-animation">
+<div class="bg-gradient-to-br from-gray-700 to-gray-600 p-8 rounded-xl text-white hover:shadow-2xl transition-all duration-500 group-hover:scale-105 hover-lift">
+<div class="w-16 h-16 bg-white/20 rounded-lg flex items-center justify-center mb-6 scale-on-hover">
+<i class="ri-customer-service-2-line text-white text-2xl"></i>
+</div>
+<h3 class="text-2xl font-semibold mb-4">Contact Us</h3>
+<p class="text-white/90 mb-6">
+Get in touch with our team for support, suggestions, or to report issues. We're here to help you succeed.
+</p>
+<div class="flex items-center text-white font-medium">
+Get Support
+<i class="ri-arrow-right-line ml-2 group-hover:translate-x-2 transition-transform duration-300"></i>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="testimonials" class="py-20 bg-gray-50 relative overflow-hidden">
+<!-- Background Pattern -->
+<div class="absolute inset-0 opacity-5">
+<img src="https://readdy.ai/api/search-image?query=subtle%20pattern%20of%20speech%20bubbles%20and%20quote%20marks%20scattered%20across%20background%2C%20minimalist%20design%2C%20light%20gray%20color%20scheme%2C%20modern%20flat%20design%20style%2C%20testimonial%20section%20background%20pattern%2C%20clean%20and%20professional&width=1920&height=600&seq=testimonial_bg&orientation=landscape" alt="" class="w-full h-full object-cover">
+</div>
+<!-- Floating Quote Graphics -->
+<div class="absolute top-20 left-20 text-6xl text-primary/10 font-serif">"</div>
+<div class="absolute bottom-20 right-20 text-6xl text-secondary/10 font-serif">"</div>
+<div class="absolute top-40 right-40 w-12 h-12 bg-primary/5 rounded-full flex items-center justify-center">
+<i class="ri-chat-quote-line text-primary/30"></i>
+</div>
+<div class="max-w-7xl mx-auto px-6 relative z-10">
+<div class="text-center mb-16">
+<div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl mb-6 mx-auto animate-pulse">
+<i class="ri-chat-heart-line text-primary text-2xl"></i>
+</div>
+<h2 class="text-4xl font-bold text-gray-900 mb-4">What Students Say</h2>
+<p class="text-xl text-gray-600">
+Hear from fellow students about their experiences with the Student Union
+</p>
+</div>
+<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+<div class="bg-white p-8 rounded-xl shadow-sm">
+<div class="flex items-center mb-6">
+<img src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20confident%20young%20African%20female%20engineering%20student%20with%20bright%20smile%2C%20wearing%20casual%20university%20attire%2C%20clean%20white%20background%2C%20high%20quality%20portrait%20photography%2C%20natural%20lighting%2C%20contemporary%20style&width=80&height=80&seq=testimonial001&orientation=squarish" alt="Sarah Johnson" class="w-16 h-16 rounded-full object-cover mr-4">
+<div>
+<h4 class="font-semibold text-gray-900">Sarah Johnson</h4>
+<p class="text-gray-600 text-sm">Computer Science, Class of 2024</p>
+</div>
+</div>
+<p class="text-gray-700 italic">
+"The Student Union helped me find my voice on campus. Through their leadership programs, I developed skills that will benefit me throughout my career."
+</p>
+</div>
+<div class="bg-white p-8 rounded-xl shadow-sm">
+<div class="flex items-center mb-6">
+<img src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20enthusiastic%20young%20African%20male%20business%20student%20with%20confident%20expression%2C%20wearing%20smart%20casual%20shirt%2C%20clean%20white%20background%2C%20high%20quality%20portrait%20photography%2C%20natural%20lighting%2C%20modern%20style&width=80&height=80&seq=testimonial002&orientation=squarish" alt="Michael Chen" class="w-16 h-16 rounded-full object-cover mr-4">
+<div>
+<h4 class="font-semibold text-gray-900">Michael Chen</h4>
+<p class="text-gray-600 text-sm">Business Administration, Class of 2025</p>
+</div>
+</div>
+<p class="text-gray-700 italic">
+"Joining the Entrepreneurship Club through the Student Union was the best decision I made. The networking opportunities are incredible."
+</p>
+</div>
+<div class="bg-white p-8 rounded-xl shadow-sm">
+<div class="flex items-center mb-6">
+<img src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20cheerful%20young%20African%20female%20medical%20student%20with%20warm%20smile%2C%20wearing%20professional%20attire%2C%20clean%20white%20background%2C%20high%20quality%20portrait%20photography%2C%20natural%20lighting%2C%20academic%20style&width=80&height=80&seq=testimonial003&orientation=squarish" alt="Emily Rodriguez" class="w-16 h-16 rounded-full object-cover mr-4">
+<div>
+<h4 class="font-semibold text-gray-900">Emily Rodriguez</h4>
+<p class="text-gray-600 text-sm">Pre-Medicine, Class of 2026</p>
+</div>
+</div>
+<p class="text-gray-700 italic">
+"The Student Union's advocacy work directly improved our library hours and study spaces. They truly listen to student needs."
+</p>
+</div>
+</div>
+</div>
+</section>
+<section id="announcements" class="py-20 bg-white relative overflow-hidden">
+<!-- Decorative Elements -->
+<div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-px h-32 bg-gradient-to-b from-primary/20 to-transparent"></div>
+<div class="absolute top-10 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-primary/10 rounded-full animate-ping"></div>
+<!-- Corner Graphics -->
+<div class="absolute top-20 right-10 w-24 h-24 opacity-10">
+<img src="https://readdy.ai/api/search-image?query=modern%20megaphone%20or%20announcement%20speaker%20icon%20in%20minimalist%20line%20art%20style%2C%20professional%20blue%20color%2C%20clean%20design%20for%20university%20website%2C%20transparent%20background%2C%20vector%20illustration%20style&width=100&height=100&seq=announce_icon&orientation=squarish" alt="" class="w-full h-full object-contain">
+</div>
+<div class="max-w-7xl mx-auto px-6 relative z-10">
+<div class="text-center mb-16">
+<div class="inline-block relative mb-6">
+<div class="w-16 h-16 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl flex items-center justify-center mx-auto animate-bounce">
+<i class="ri-notification-3-line text-primary text-2xl"></i>
+</div>
+<div class="absolute -top-1 -right-1 w-6 h-6 bg-red-500 rounded-full flex items-center justify-center animate-pulse">
+<span class="text-white text-xs font-bold">3</span>
+</div>
+</div>
+<h2 class="text-4xl font-bold text-gray-900 mb-4">Latest Announcements</h2>
+<p class="text-xl text-gray-600">
+Stay informed with the most recent updates and important notices
+</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
+<div class="flex items-center mb-4">
+<div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mr-3">
+<i class="ri-calendar-line text-primary"></i>
+</div>
+<span class="text-sm text-gray-500">November 15, 2024</span>
+</div>
+<h3 class="text-lg font-semibold text-gray-900 mb-3">Annual Student Elections</h3>
+<p class="text-gray-600 mb-4">Nominations are now open for the 2024-2025 Student Union executive positions. Apply by December 1st.</p>
+<button class="text-primary font-medium hover:text-primary/80 transition-colors cursor-pointer">Read More →</button>
+</div>
+<div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
+<div class="flex items-center mb-4">
+<div class="w-10 h-10 bg-secondary/10 rounded-lg flex items-center justify-center mr-3">
+<i class="ri-gift-line text-secondary"></i>
+</div>
+<span class="text-sm text-gray-500">November 12, 2024</span>
+</div>
+<h3 class="text-lg font-semibold text-gray-900 mb-3">Scholarship Opportunities</h3>
+<p class="text-gray-600 mb-4">New merit-based scholarships available for outstanding students. Applications due November 30th.</p>
+<button class="text-primary font-medium hover:text-primary/80 transition-colors cursor-pointer">Read More →</button>
+</div>
+<div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
+<div class="flex items-center mb-4">
+<div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mr-3">
+<i class="ri-celebration-line text-green-600"></i>
+</div>
+<span class="text-sm text-gray-500">November 10, 2024</span>
+</div>
+<h3 class="text-lg font-semibold text-gray-900 mb-3">Cultural Festival 2024</h3>
+<p class="text-gray-600 mb-4">Join us for three days of cultural celebration featuring music, dance, food, and art from December 5-7.</p>
+<button class="text-primary font-medium hover:text-primary/80 transition-colors cursor-pointer">Read More →</button>
+</div>
+</div>
+<div class="text-center mt-12">
+<button class="bg-primary text-white px-8 py-3 rounded-button font-medium hover:bg-primary/90 transition-colors cursor-pointer !rounded-button">
+View All Announcements
+</button>
+</div>
+</div>
+</section>
+<section id="leadership" class="py-20 bg-gray-50 relative overflow-hidden">
+<!-- Leadership Graphics -->
+<div class="absolute top-0 right-0 w-60 h-60 opacity-5">
+<img src="https://readdy.ai/api/search-image?query=abstract%20leadership%20concept%20with%20interconnected%20circles%20and%20arrows%20pointing%20upward%2C%20modern%20minimalist%20design%2C%20professional%20blue%20and%20gray%20colors%2C%20organizational%20chart%20style%2C%20clean%20vector%20illustration%20for%20university%20website&width=300&height=300&seq=leadership_bg&orientation=squarish" alt="" class="w-full h-full object-contain">
+</div>
+<div class="absolute bottom-10 left-10 w-20 h-20 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-full animate-pulse"></div>
+<div class="max-w-7xl mx-auto px-6 relative z-10">
+<div class="text-center mb-16">
+<div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl mb-6 mx-auto animate-bounce">
+<i class="ri-crown-line text-primary text-2xl"></i>
+</div>
+<h2 class="text-4xl font-bold text-gray-900 mb-4">Student Leadership</h2>
+<p class="text-xl text-gray-600">
+Meet the dedicated students leading our union and representing your interests
+</p>
+</div>
+<div class="grid md:grid-cols-2 gap-8 mb-16">
+<div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+<div class="flex flex-col md:flex-row items-center md:items-start gap-6">
+<img src="https://readdy.ai/api/search-image?query=professional%20portrait%20of%20confident%20young%20African%20male%20student%20leader%20wearing%20formal%20attire%2C%20warm%20smile%2C%20clean%20white%20background%2C%20high%20quality%20headshot%20photography%2C%20natural%20lighting%2C%20leadership%20presence%2C%20contemporary%20style&width=200&height=200&seq=leader001&orientation=squarish" alt="President" class="w-32 h-32 rounded-full object-cover">
+<div class="text-center md:text-left flex-1">
+<h3 class="text-2xl font-semibold text-gray-900 mb-2">Daniel Tadesse</h3>
+<p class="text-primary font-medium text-lg mb-3">President</p>
+<p class="text-gray-600 mb-4">Computer Engineering, 4th Year</p>
+<div class="space-y-2 mb-4">
+<div class="flex items-center justify-center md:justify-start">
+<i class="ri-mail-line text-gray-400 mr-2"></i>
+<span class="text-gray-600">daniel.tadesse@astu.edu.et</span>
+</div>
+<div class="flex items-center justify-center md:justify-start">
+<i class="ri-phone-line text-gray-400 mr-2"></i>
+<span class="text-gray-600">+251 91 234 5678</span>
+</div>
+</div>
+<p class="text-gray-700 text-sm leading-relaxed">
+"Leading with integrity and passion, I'm committed to ensuring every student's voice is heard and their university experience is enriching and meaningful."
+</p>
+</div>
+</div>
+</div>
+<div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+<div class="flex flex-col md:flex-row items-center md:items-start gap-6">
+<img src="https://readdy.ai/api/search-image?query=professional%20portrait%20of%20confident%20young%20African%20female%20student%20leader%20wearing%20business%20attire%2C%20bright%20smile%2C%20clean%20white%20background%2C%20high%20quality%20headshot%20photography%2C%20natural%20lighting%2C%20leadership%20qualities%2C%20modern%20style&width=200&height=200&seq=leader002&orientation=squarish" alt="Vice President" class="w-32 h-32 rounded-full object-cover">
+<div class="text-center md:text-left flex-1">
+<h3 class="text-2xl font-semibold text-gray-900 mb-2">Meron Assefa</h3>
+<p class="text-primary font-medium text-lg mb-3">Vice President</p>
+<p class="text-gray-600 mb-4">Business Administration, 3rd Year</p>
+<div class="space-y-2 mb-4">
+<div class="flex items-center justify-center md:justify-start">
+<i class="ri-mail-line text-gray-400 mr-2"></i>
+<span class="text-gray-600">meron.assefa@astu.edu.et</span>
+</div>
+<div class="flex items-center justify-center md:justify-start">
+<i class="ri-phone-line text-gray-400 mr-2"></i>
+<span class="text-gray-600">+251 91 345 6789</span>
+</div>
+</div>
+<p class="text-gray-700 text-sm leading-relaxed">
+"Dedicated to fostering innovation and collaboration, I work to create opportunities that empower students to excel academically and personally."
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="grid md:grid-cols-2 gap-8">
+<div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+<div class="flex flex-col md:flex-row items-center md:items-start gap-6">
+<img src="https://readdy.ai/api/search-image?query=professional%20portrait%20of%20young%20African%20male%20student%20treasurer%20wearing%20smart%20casual%20attire%2C%20confident%20expression%2C%20clean%20white%20background%2C%20high%20quality%20headshot%20photography%2C%20natural%20lighting%2C%20professional%20appearance&width=200&height=200&seq=leader003&orientation=squarish" alt="Treasurer" class="w-24 h-24 rounded-full object-cover">
+<div class="text-center md:text-left flex-1">
+<h3 class="text-xl font-semibold text-gray-900 mb-2">Yonas Bekele</h3>
+<p class="text-primary font-medium mb-3">Treasurer</p>
+<p class="text-gray-600 mb-4">Mechanical Engineering, 3rd Year</p>
+<div class="space-y-2 mb-4">
+<div class="flex items-center justify-center md:justify-start">
+<i class="ri-mail-line text-gray-400 mr-2"></i>
+<span class="text-gray-600 text-sm">yonas.bekele@astu.edu.et</span>
+</div>
+<div class="flex items-center justify-center md:justify-start">
+<i class="ri-phone-line text-gray-400 mr-2"></i>
+<span class="text-gray-600 text-sm">+251 91 456 7890</span>
+</div>
+</div>
+<p class="text-gray-700 text-sm leading-relaxed">
+"Ensuring financial transparency and managing resources effectively to maximize student benefits and union activities."
+</p>
+</div>
+</div>
+</div>
+<div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+<div class="flex flex-col md:flex-row items-center md:items-start gap-6">
+<img src="https://readdy.ai/api/search-image?query=professional%20portrait%20of%20young%20African%20female%20student%20secretary%20wearing%20professional%20attire%2C%20friendly%20smile%2C%20clean%20white%20background%2C%20high%20quality%20headshot%20photography%2C%20natural%20lighting%2C%20approachable%20demeanor&width=200&height=200&seq=leader004&orientation=squarish" alt="Secretary" class="w-24 h-24 rounded-full object-cover">
+<div class="text-center md:text-left flex-1">
+<h3 class="text-xl font-semibold text-gray-900 mb-2">Hanan Mohammed</h3>
+<p class="text-primary font-medium mb-3">General Secretary</p>
+<p class="text-gray-600 mb-4">Information Systems, 2nd Year</p>
+<div class="space-y-2 mb-4">
+<div class="flex items-center justify-center md:justify-start">
+<i class="ri-mail-line text-gray-400 mr-2"></i>
+<span class="text-gray-600 text-sm">hanan.mohammed@astu.edu.et</span>
+</div>
+<div class="flex items-center justify-center md:justify-start">
+<i class="ri-phone-line text-gray-400 mr-2"></i>
+<span class="text-gray-600 text-sm">+251 91 567 8901</span>
+</div>
+</div>
+<p class="text-gray-700 text-sm leading-relaxed">
+"Coordinating union activities and maintaining clear communication between leadership and the student body."
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="clubs" class="py-20 bg-white relative overflow-hidden">
+<!-- Club Graphics -->
+<div class="absolute top-20 left-20 w-32 h-32 opacity-10">
+<img src="https://readdy.ai/api/search-image?query=diverse%20group%20of%20students%20silhouettes%20arranged%20in%20a%20circle%20holding%20hands%2C%20unity%20and%20community%20concept%2C%20modern%20flat%20design%20style%2C%20vibrant%20blue%20colors%2C%20teamwork%20illustration%20for%20university%20club%20section&width=200&height=200&seq=clubs_unity&orientation=squarish" alt="" class="w-full h-full object-contain">
+</div>
+<div class="absolute bottom-20 right-20 w-28 h-28 bg-gradient-to-br from-secondary/10 to-primary/10 rounded-full blur-2xl"></div>
+<!-- Floating Icons -->
+<div class="absolute top-40 right-40 w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center animate-bounce" style="animation-delay: 0.5s;">
+<i class="ri-computer-line text-blue-600 text-sm"></i>
+</div>
+<div class="absolute top-60 left-60 w-10 h-10 bg-green-100 rounded-full flex items-center justify-center animate-pulse" style="animation-delay: 1s;">
+<i class="ri-plant-line text-green-600 text-sm"></i>
+</div>
+<div class="absolute bottom-40 left-40 w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center animate-bounce" style="animation-delay: 1.5s;">
+<i class="ri-palette-line text-purple-600 text-sm"></i>
+</div>
+<div class="max-w-7xl mx-auto px-6 relative z-10">
+<div class="text-center mb-16">
+<div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl mb-6 mx-auto animate-pulse">
+<i class="ri-team-line text-primary text-2xl"></i>
+</div>
+<h2 class="text-4xl font-bold text-gray-900 mb-4">Student Clubs & Societies</h2>
+<p class="text-xl text-gray-600">
+Join one of our 50+ active clubs and find your community at ASTU
+</p>
+<div class="flex justify-center mt-8">
+<div class="bg-gradient-to-r from-primary to-secondary rounded-full px-6 py-2 text-white font-medium text-lg animate-pulse">
+50+ Active Clubs
+</div>
+</div>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
+<div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+<i class="ri-computer-line text-blue-600 text-xl"></i>
+</div>
+<h3 class="text-lg font-semibold text-gray-900 mb-3">Tech Innovation Club</h3>
+<p class="text-gray-600 mb-4">Explore cutting-edge technology, participate in hackathons, and build innovative solutions.</p>
+<div class="flex items-center justify-between">
+<span class="text-sm text-gray-500">285 members</span>
+<button class="text-primary font-medium hover:text-primary/80 transition-colors cursor-pointer">Join Club</button>
+</div>
+</div>
+<div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
+<div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+<i class="ri-plant-line text-green-600 text-xl"></i>
+</div>
+<h3 class="text-lg font-semibold text-gray-900 mb-3">Environmental Society</h3>
+<p class="text-gray-600 mb-4">Promote sustainability, organize cleanup drives, and advocate for environmental protection.</p>
+<div class="flex items-center justify-between">
+<span class="text-sm text-gray-500">142 members</span>
+<button class="text-primary font-medium hover:text-primary/80 transition-colors cursor-pointer">Join Club</button>
+</div>
+</div>
+<div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
+<div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+<i class="ri-palette-line text-purple-600 text-xl"></i>
+</div>
+<h3 class="text-lg font-semibold text-gray-900 mb-3">Arts & Culture Club</h3>
+<p class="text-gray-600 mb-4">Express creativity through visual arts, theater, music, and cultural exhibitions.</p>
+<div class="flex items-center justify-between">
+<span class="text-sm text-gray-500">198 members</span>
+<button class="text-primary font-medium hover:text-primary/80 transition-colors cursor-pointer">Join Club</button>
+</div>
+</div>
+<div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
+<div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
+<i class="ri-basketball-line text-orange-600 text-xl"></i>
+</div>
+<h3 class="text-lg font-semibold text-gray-900 mb-3">Sports & Recreation</h3>
+<p class="text-gray-600 mb-4">Stay active with various sports, fitness activities, and inter-university competitions.</p>
+<div class="flex items-center justify-between">
+<span class="text-sm text-gray-500">356 members</span>
+<button class="text-primary font-medium hover:text-primary/80 transition-colors cursor-pointer">Join Club</button>
+</div>
+</div>
+<div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
+<div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+<i class="ri-heart-line text-red-600 text-xl"></i>
+</div>
+<h3 class="text-lg font-semibold text-gray-900 mb-3">Community Service</h3>
+<p class="text-gray-600 mb-4">Make a difference through volunteer work, charity events, and community outreach programs.</p>
+<div class="flex items-center justify-between">
+<span class="text-sm text-gray-500">219 members</span>
+<button class="text-primary font-medium hover:text-primary/80 transition-colors cursor-pointer">Join Club</button>
+</div>
+</div>
+<div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
+<div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
+<i class="ri-lightbulb-line text-indigo-600 text-xl"></i>
+</div>
+<h3 class="text-lg font-semibold text-gray-900 mb-3">Entrepreneurship Club</h3>
+<p class="text-gray-600 mb-4">Develop business skills, network with entrepreneurs, and launch your startup ideas.</p>
+<div class="flex items-center justify-between">
+<span class="text-sm text-gray-500">167 members</span>
+<button class="text-primary font-medium hover:text-primary/80 transition-colors cursor-pointer">Join Club</button>
+</div>
+</div>
+</div>
+<div class="text-center mt-12">
+<button class="bg-primary text-white px-8 py-3 rounded-button font-medium hover:bg-primary/90 transition-all duration-300 cursor-pointer !rounded-button hover-lift animate-pulse">
+View All Clubs
+</button>
+</div>
+<!-- AI Assistant -->
+<div class="ai-assistant-floating">
+<button id="ai-assistant-btn" class="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center text-white animate-bounce hover:scale-110">
+<i class="ri-robot-line text-2xl"></i>
+</button>
+</div>
+<div id="ai-chat-window" class="ai-chat-window bg-white rounded-xl shadow-2xl border border-gray-200 hidden">
+<div class="bg-gradient-to-r from-primary to-secondary p-4 rounded-t-xl text-white">
+<div class="flex items-center justify-between">
+<div class="flex items-center">
+<div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center mr-3">
+<i class="ri-robot-line"></i>
+</div>
+<div>
+<h3 class="font-semibold">ASTU AI Assistant</h3>
+<p class="text-xs text-white/80">Online • Ready to help</p>
+</div>
+</div>
+<button id="close-ai-chat" class="w-6 h-6 flex items-center justify-center hover:bg-white/20 rounded-full transition-colors">
+<i class="ri-close-line"></i>
+</button>
+</div>
+</div>
+<div class="chat-messages p-4 space-y-3" id="chat-messages">
+<div class="message flex items-start">
+<div class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+<i class="ri-robot-line text-primary text-sm"></i>
+</div>
+<div class="bg-gray-100 rounded-lg p-3 max-w-[250px]">
+<p class="text-sm text-gray-800">Hi! I'm your ASTU AI Assistant. I can help you with:</p>
+<ul class="text-xs text-gray-600 mt-2 space-y-1">
+<li>• Club information</li>
+<li>• Event details</li>
+<li>• Contact information</li>
+<li>• General inquiries</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="p-4 border-t border-gray-200">
+<div class="flex space-x-2">
+<input type="text" id="ai-input" placeholder="Ask me anything..." class="flex-1 px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary">
+<button id="send-ai-message" class="bg-primary text-white p-2 rounded-lg hover:bg-primary/90 transition-colors">
+<i class="ri-send-plane-fill"></i>
+</button>
+</div>
+<div class="flex flex-wrap gap-2 mt-3">
+<button class="quick-question bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs hover:bg-gray-200 transition-colors" data-question="How do I join a club?">
+Join a club?
+</button>
+<button class="quick-question bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs hover:bg-gray-200 transition-colors" data-question="What events are coming up?">
+Upcoming events?
+</button>
+<button class="quick-question bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs hover:bg-gray-200 transition-colors" data-question="Contact information?">
+Contact info?
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-primary relative overflow-hidden">
+<!-- Newsletter Graphics -->
+<div class="absolute top-0 left-0 w-full h-full opacity-10">
+<img src="https://readdy.ai/api/search-image?query=abstract%20email%20and%20communication%20icons%20floating%20in%20space%2C%20newsletter%20concept%20with%20envelopes%20and%20notification%20symbols%2C%20modern%20line%20art%20style%2C%20white%20color%20on%20blue%20background%2C%20minimalist%20design%20for%20subscription%20section&width=1200&height=400&seq=newsletter_bg&orientation=landscape" alt="" class="w-full h-full object-cover">
+</div>
+<div class="absolute top-10 left-10 w-16 h-16 bg-white/10 rounded-full animate-pulse"></div>
+<div class="absolute bottom-10 right-10 w-20 h-20 bg-white/10 rounded-full animate-bounce"></div>
+<div class="absolute top-1/2 left-20 transform -translate-y-1/2 w-12 h-12 bg-white/5 rounded-full animate-ping"></div>
+<div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+<div class="inline-flex items-center justify-center w-20 h-20 bg-white/20 rounded-full mb-8 mx-auto animate-pulse">
+<i class="ri-mail-send-line text-white text-3xl"></i>
+</div>
+<h2 class="text-4xl font-bold text-white mb-4">Stay Connected</h2>
+<p class="text-xl text-white/90 mb-8">
+Subscribe to our newsletter for the latest updates, events, and opportunities
+</p>
+<div class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+<input id="newsletter-email" type="email" placeholder="Enter your email address" class="flex-1 px-4 py-3 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white/20">
+<button id="newsletter-subscribe" class="bg-white text-primary px-6 py-3 rounded-button font-medium hover:bg-gray-100 transition-colors whitespace-nowrap !rounded-button cursor-pointer">
+<i class="ri-send-plane-line mr-2"></i>Subscribe
+</button>
+</div>
+</div>
+</section>
+</main>
+<section id="contact" class="py-20 bg-white relative overflow-hidden">
+<!-- Contact Graphics -->
+<div class="absolute top-0 right-0 w-80 h-80 opacity-5">
+<img src="https://readdy.ai/api/search-image?query=modern%20contact%20and%20communication%20illustration%20with%20phone%2C%20email%2C%20and%20location%20icons%2C%20clean%20line%20art%20style%2C%20professional%20blue%20color%20scheme%2C%20customer%20service%20concept%20for%20university%20website%20contact%20section&width=400&height=400&seq=contact_bg&orientation=squarish" alt="" class="w-full h-full object-contain">
+</div>
+<div class="absolute bottom-0 left-0 w-60 h-60 bg-gradient-to-tr from-primary/5 to-secondary/5 rounded-full blur-3xl"></div>
+<!-- Floating Contact Icons -->
+<div class="absolute top-32 left-20 w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center animate-bounce">
+<i class="ri-phone-line text-primary"></i>
+</div>
+<div class="absolute top-60 right-32 w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center animate-pulse">
+<i class="ri-mail-line text-secondary"></i>
+</div>
+<div class="absolute bottom-40 left-32 w-12 h-12 bg-green-100 rounded-full flex items-center justify-center animate-bounce" style="animation-delay: 1s;">
+<i class="ri-map-pin-line text-green-600"></i>
+</div>
+<div class="max-w-7xl mx-auto px-6 relative z-10">
+<div class="text-center mb-16">
+<div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl mb-6 mx-auto animate-pulse">
+<i class="ri-customer-service-2-line text-primary text-2xl"></i>
+</div>
+<h2 class="text-4xl font-bold text-gray-900 mb-4">Contact Us</h2>
+<p class="text-xl text-gray-600">
+Get in touch with us for support, suggestions, or any inquiries
+</p>
+</div>
+<div class="grid lg:grid-cols-2 gap-12">
+<div>
+<h3 class="text-2xl font-semibold text-gray-900 mb-6">Send us a Message</h3>
+<form id="contact-form" class="space-y-6">
+<div class="grid md:grid-cols-2 gap-4">
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">First Name</label>
+<input type="text" name="firstName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary">
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
+<input type="text" name="lastName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary">
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+<input type="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary">
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+<input type="tel" name="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary">
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Subject</label>
+<select name="subject" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary pr-8">
+<option value="">Select a subject</option>
+<option value="general">General Inquiry</option>
+<option value="complaint">Complaint</option>
+<option value="suggestion">Suggestion</option>
+<option value="club">Club Information</option>
+<option value="event">Event Information</option>
+<option value="support">Technical Support</option>
+</select>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+<textarea name="message" rows="5" maxlength="500" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary resize-none" placeholder="Tell us how we can help you..."></textarea>
+<div class="text-right text-sm text-gray-500 mt-1">
+<span id="message-counter">0</span>/500 characters
+</div>
+</div>
+<button type="submit" class="w-full bg-primary text-white py-3 px-6 rounded-button font-medium hover:bg-primary/90 transition-colors !rounded-button">
+Send Message
+</button>
+</form>
+</div>
+<div>
+<h3 class="text-2xl font-semibold text-gray-900 mb-6">Get in Touch</h3>
+<div class="space-y-8">
+<div class="bg-gray-50 p-6 rounded-xl">
+<h4 class="text-lg font-semibold text-gray-900 mb-4">Student Union Office</h4>
+<div class="space-y-4">
+<div class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center mr-4 mt-1">
+<i class="ri-map-pin-line text-primary"></i>
+</div>
+<div>
+<p class="text-gray-700 font-medium">Address</p>
+<p class="text-gray-600">Student Union Building, 2nd Floor<br>ASTU Campus, Adama, Ethiopia</p>
+</div>
+</div>
+<div class="flex items-center">
+<div class="w-6 h-6 flex items-center justify-center mr-4">
+<i class="ri-phone-line text-primary"></i>
+</div>
+<div>
+<p class="text-gray-700 font-medium">Phone</p>
+<p class="text-gray-600">+251 11 646 3200</p>
+</div>
+</div>
+<div class="flex items-center">
+<div class="w-6 h-6 flex items-center justify-center mr-4">
+<i class="ri-mail-line text-primary"></i>
+</div>
+<div>
+<p class="text-gray-700 font-medium">Email</p>
+<p class="text-gray-600">union@astu.edu.et</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-secondary/10 p-6 rounded-xl">
+<h4 class="text-lg font-semibold text-gray-900 mb-4">Office Hours</h4>
+<div class="space-y-2">
+<div class="flex justify-between">
+<span class="text-gray-700">Monday - Friday</span>
+<span class="text-gray-600">8:00 AM - 5:00 PM</span>
+</div>
+<div class="flex justify-between">
+<span class="text-gray-700">Saturday</span>
+<span class="text-gray-600">9:00 AM - 2:00 PM</span>
+</div>
+<div class="flex justify-between">
+<span class="text-gray-700">Sunday</span>
+<span class="text-gray-600">Closed</span>
+</div>
+</div>
+</div>
+<div class="bg-gray-50 p-6 rounded-xl">
+<h4 class="text-lg font-semibold text-gray-900 mb-4">Emergency Contact</h4>
+<div class="space-y-3">
+<div class="flex items-center">
+<div class="w-6 h-6 flex items-center justify-center mr-4">
+<i class="ri-phone-line text-red-600"></i>
+</div>
+<div>
+<p class="text-gray-700 font-medium">Emergency Hotline</p>
+<p class="text-gray-600">+251 91 123 4567</p>
+</div>
+</div>
+<p class="text-sm text-gray-500">Available 24/7 for urgent student matters</p>
+</div>
+</div>
+</div>
+<div class="mt-8">
+<h4 class="text-lg font-semibold text-gray-900 mb-4">Follow Us</h4>
+<div class="flex space-x-4">
+<a href="#" class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center hover:bg-blue-700 transition-colors cursor-pointer">
+<i class="ri-facebook-fill text-white text-xl"></i>
+</a>
+<a href="#" class="w-12 h-12 bg-pink-600 rounded-lg flex items-center justify-center hover:bg-pink-700 transition-colors cursor-pointer">
+<i class="ri-instagram-line text-white text-xl"></i>
+</a>
+<a href="#" class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors cursor-pointer">
+<i class="ri-telegram-line text-white text-xl"></i>
+</a>
+<a href="#" class="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center hover:bg-red-700 transition-colors cursor-pointer">
+<i class="ri-youtube-line text-white text-xl"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-16">
+<div class="bg-gray-100 rounded-xl p-2" style="background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png'); background-size: cover; background-position: center; height: 400px; overflow: hidden;">
+<div class="w-full h-full bg-gray-200/50 rounded-lg"></div>
+</div>
+</div>
+</div>
+</section>
+<footer class="bg-gray-900 text-white py-16">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid md:grid-cols-4 gap-8 mb-12">
+<div>
+<div class="text-2xl font-['Pacifico'] text-primary mb-4 cursor-pointer">ASTU</div>
+<p class="text-gray-400 mb-6">
+Empowering students and building stronger campus communities through leadership and innovation.
+</p>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary transition-colors cursor-pointer">
+<i class="ri-facebook-fill text-lg"></i>
+</a>
+<a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary transition-colors cursor-pointer">
+<i class="ri-instagram-line text-lg"></i>
+</a>
+<a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary transition-colors cursor-pointer">
+<i class="ri-telegram-line text-lg"></i>
+</a>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+<ul class="space-y-2">
+<li><a href="#home" class="text-gray-400 hover:text-white transition-colors cursor-pointer">Home</a></li>
+<li><a href="#about" class="text-gray-400 hover:text-white transition-colors cursor-pointer">About Us</a></li>
+<li><a href="#leadership" class="text-gray-400 hover:text-white transition-colors cursor-pointer">Leadership</a></li>
+<li><a href="#testimonials" class="text-gray-400 hover:text-white transition-colors cursor-pointer">Events</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-4">Student Resources</h3>
+<ul class="space-y-2">
+<li><a href="#clubs" class="text-gray-400 hover:text-white transition-colors cursor-pointer">Clubs & Societies</a></li>
+<li><a href="#announcements" class="text-gray-400 hover:text-white transition-colors cursor-pointer">Announcements</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors cursor-pointer">Scholarships</a></li>
+<li><a href="#contact" class="text-gray-400 hover:text-white transition-colors cursor-pointer">Support Services</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-4">Contact Info</h3>
+<div class="space-y-3">
+<div class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center mr-3">
+<i class="ri-mail-line text-gray-400"></i>
+</div>
+<span class="text-gray-400">union@astu.edu.et</span>
+</div>
+<div class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center mr-3">
+<i class="ri-phone-line text-gray-400"></i>
+</div>
+<span class="text-gray-400">+251 11 646 3200</span>
+</div>
+<div class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mr-3 mt-1">
+<i class="ri-map-pin-line text-gray-400"></i>
+</div>
+<span class="text-gray-400">ASTU Campus, Adama, Ethiopia</span>
+</div>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-800 pt-8 text-center">
+<p class="text-gray-400">
+© 2024 ASTU Student Union. All rights reserved. | Made with ❤️ for students
+</p>
+</div>
+</div>
+</footer>
+<div id="modal-overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center">
+<div class="bg-white rounded-xl p-8 max-w-md w-full mx-4">
+<div id="modal-content" class="text-center">
+<h3 class="text-xl font-semibold text-gray-900 mb-4">Feature Coming Soon</h3>
+<p class="text-gray-600 mb-6">This feature is currently under development. Please check back later!</p>
+<button id="modal-close" class="bg-primary text-white px-6 py-2 rounded-button hover:bg-primary/90 transition-colors cursor-pointer !rounded-button">
+Close
+</button>
+</div>
+</div>
+</div>
+<div id="login-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center">
+<div class="bg-white rounded-xl p-8 max-w-md w-full mx-4">
+<h3 class="text-2xl font-semibold text-gray-900 mb-6 text-center">Admin Login</h3>
+<form id="login-form" class="space-y-4">
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Username</label>
+<input type="text" id="login-username" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary">
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Password</label>
+<input type="password" id="login-password" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary">
+</div>
+<div class="flex gap-3 mt-6">
+<button type="submit" class="flex-1 bg-primary text-white py-2 rounded-button font-medium hover:bg-primary/90 transition-colors cursor-pointer !rounded-button">
+Login
+</button>
+<button type="button" id="login-cancel" class="flex-1 border border-gray-300 text-gray-700 py-2 rounded-button font-medium hover:bg-gray-50 transition-colors cursor-pointer !rounded-button">
+Cancel
+</button>
+</div>
+</form>
+</div>
+</div>
+<script id="navigation-mobile">
+document.addEventListener('DOMContentLoaded', function() {
+const mobileMenuButton = document.getElementById('mobile-menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+if (mobileMenuButton && mobileMenu) {
+mobileMenuButton.addEventListener('click', function() {
+mobileMenu.classList.toggle('hidden');
+});
+}
+});
+</script>
+<script id="smooth-scroll">
+document.addEventListener('DOMContentLoaded', function() {
+const links = document.querySelectorAll('a[href^="#"]');
+links.forEach(link => {
+link.addEventListener('click', function(e) {
+e.preventDefault();
+const targetId = this.getAttribute('href');
+const targetElement = document.querySelector(targetId);
+if (targetElement) {
+targetElement.scrollIntoView({
+behavior: 'smooth',
+block: 'start'
+});
+const mobileMenu = document.getElementById('mobile-menu');
+if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+mobileMenu.classList.add('hidden');
+}
+}
+});
+});
+});
+</script>
+<script id="newsletter-subscription">
+document.addEventListener('DOMContentLoaded', function() {
+const subscribeButton = document.getElementById('newsletter-subscribe');
+const emailInput = document.getElementById('newsletter-email');
+if (subscribeButton && emailInput) {
+function handleSubscription() {
+const email = emailInput.value.trim();
+if (email && email.includes('@') && email.includes('.')) {
+showModal('Success!', 'Thank you for subscribing! You will receive updates at ' + email);
+emailInput.value = '';
+} else {
+showModal('Invalid Email', 'Please enter a valid email address.');
+}
+}
+subscribeButton.addEventListener('click', handleSubscription);
+emailInput.addEventListener('keypress', function(e) {
+if (e.key === 'Enter') {
+handleSubscription();
+}
+});
+}
+});
+</script>
+<script id="modal-system">
+document.addEventListener('DOMContentLoaded', function() {
+const modalOverlay = document.getElementById('modal-overlay');
+const modalContent = document.getElementById('modal-content');
+const modalClose = document.getElementById('modal-close');
+window.showModal = function(title, message) {
+modalContent.innerHTML = `
+<div class="text-center">
+<h3 class="text-xl font-semibold text-gray-900 mb-4">${title}</h3>
+<p class="text-gray-600 mb-6">${message}</p>
+<button id="modal-close-btn" class="bg-primary text-white px-6 py-2 rounded-button hover:bg-primary/90 transition-colors cursor-pointer !rounded-button">
+Close
+</button>
+</div>
+`;
+modalOverlay.classList.remove('hidden');
+const newCloseBtn = document.getElementById('modal-close-btn');
+newCloseBtn.addEventListener('click', function() {
+modalOverlay.classList.add('hidden');
+});
+};
+modalOverlay.addEventListener('click', function(e) {
+if (e.target === modalOverlay) {
+modalOverlay.classList.add('hidden');
+}
+});
+});
+</script>
+<script id="admin-login">
+document.addEventListener('DOMContentLoaded', function() {
+const adminLoginBtn = document.getElementById('admin-login-btn');
+const loginModal = document.getElementById('login-modal');
+const loginForm = document.getElementById('login-form');
+const loginCancel = document.getElementById('login-cancel');
+const loginUsername = document.getElementById('login-username');
+const loginPassword = document.getElementById('login-password');
+// Mock messages from contact form
+let contactMessages = [
+{
+id: 1,
+firstName: 'Abebe',
+lastName: 'Tadesse',
+email: 'abebe.tadesse@student.astu.edu.et',
+phone: '+251 91 234 5678',
+subject: 'general',
+message: 'I would like to know more about the upcoming cultural festival and how I can participate in organizing it.',
+timestamp: '2024-11-20 14:30:00',
+status: 'unread'
+},
+{
+id: 2,
+firstName: 'Meron',
+lastName: 'Ashenafi',
+email: 'meron.ashenafi@student.astu.edu.et',
+phone: '+251 91 345 6789',
+subject: 'complaint',
+message: 'The student union website is not working properly on mobile devices. Some buttons are not clickable and the layout is broken.',
+timestamp: '2024-11-19 16:45:00',
+status: 'read'
+},
+{
+id: 3,
+firstName: 'Daniel',
+lastName: 'Bekele',
+email: 'daniel.bekele@student.astu.edu.et',
+phone: '+251 91 456 7890',
+subject: 'club',
+message: 'I am interested in starting a new photography club. What are the requirements and procedures to establish a new student organization?',
+timestamp: '2024-11-18 10:15:00',
+status: 'replied'
+}
+];
+let posts = [
+{
+id: 1,
+title: 'Welcome to New Academic Year',
+content: 'We are excited to welcome all students to the new academic year...',
+category: 'news',
+author: 'Admin',
+timestamp: '2024-11-15 09:00:00',
+status: 'published'
+},
+{
+id: 2,
+title: 'Student Club Registration Open',
+content: 'Registration for student clubs is now open for all interested students...',
+category: 'announcement',
+author: 'Admin',
+timestamp: '2024-11-10 14:30:00',
+status: 'draft'
+}
+];
+adminLoginBtn.addEventListener('click', function() {
+loginModal.classList.remove('hidden');
+});
+loginCancel.addEventListener('click', function() {
+loginModal.classList.add('hidden');
+loginForm.reset();
+});
+loginForm.addEventListener('submit', function(e) {
+e.preventDefault();
+const username = loginUsername.value.trim();
+const password = loginPassword.value.trim();
+if (username && password) {
+loginModal.classList.add('hidden');
+loginForm.reset();
+showAdminDashboard();
+} else {
+showModal('Login Failed', 'Please enter both username and password.');
+}
+});
+loginModal.addEventListener('click', function(e) {
+if (e.target === loginModal) {
+loginModal.classList.add('hidden');
+loginForm.reset();
+}
+});
+window.showAdminDashboard = function() {
+const mainContent = document.querySelector('main');
+mainContent.innerHTML = `
+<div class="min-h-screen bg-gray-50">
+<div class="bg-white shadow-sm border-b">
+<div class="max-w-7xl mx-auto px-4 sm:px-6">
+<div class="flex items-center justify-between py-4">
+<div class="flex items-center space-x-4">
+<div class="text-xl sm:text-2xl font-['Pacifico'] text-primary">Admin Dashboard</div>
+<div class="hidden md:flex items-center space-x-6">
+<button onclick="showDashboardSection('overview')" class="nav-btn active text-primary font-medium">Overview</button>
+<button onclick="showDashboardSection('messages')" class="nav-btn text-gray-600 hover:text-primary transition-colors">Messages</button>
+<button onclick="showDashboardSection('posts')" class="nav-btn text-gray-600 hover:text-primary transition-colors">Posts</button>
+<button onclick="showDashboardSection('analytics')" class="nav-btn text-gray-600 hover:text-primary transition-colors">Analytics</button>
+</div>
+</div>
+<div class="flex items-center space-x-4">
+<div class="relative">
+<button class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors">
+<i class="ri-notification-3-line text-gray-600"></i>
+</button>
+<div class="absolute -top-1 -right-1 w-5 h-5 bg-red-500 text-white text-xs rounded-full flex items-center justify-center">
+${contactMessages.filter(m => m.status === 'unread').length}
+</div>
+</div>
+<button onclick="logoutAdmin()" class="bg-red-500 text-white px-4 py-2 rounded-button hover:bg-red-600 transition-colors !rounded-button">
+Logout
+</button>
+<button id="mobile-admin-menu" class="md:hidden w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center">
+<i class="ri-menu-line text-gray-600"></i>
+</button>
+</div>
+</div>
+<div id="mobile-nav" class="hidden md:hidden py-4 border-t">
+<div class="flex flex-col space-y-2">
+<button onclick="showDashboardSection('overview')" class="nav-btn active text-left py-2 text-primary font-medium">Overview</button>
+<button onclick="showDashboardSection('messages')" class="nav-btn text-left py-2 text-gray-600 hover:text-primary transition-colors">Messages</button>
+<button onclick="showDashboardSection('posts')" class="nav-btn text-left py-2 text-gray-600 hover:text-primary transition-colors">Posts</button>
+<button onclick="showDashboardSection('analytics')" class="nav-btn text-left py-2 text-gray-600 hover:text-primary transition-colors">Analytics</button>
+</div>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
+<div id="dashboard-content">
+${getDashboardOverview()}
+</div>
+</div>
+</div>
+`;
+// Add mobile menu toggle
+document.getElementById('mobile-admin-menu').addEventListener('click', function() {
+const mobileNav = document.getElementById('mobile-nav');
+mobileNav.classList.toggle('hidden');
+});
+};
+function getDashboardOverview() {
+const unreadMessages = contactMessages.filter(m => m.status === 'unread').length;
+const totalMessages = contactMessages.length;
+const publishedPosts = posts.filter(p => p.status === 'published').length;
+const draftPosts = posts.filter(p => p.status === 'draft').length;
+return `
+<div class="mb-8">
+<h1 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Welcome back, Admin!</h1>
+<p class="text-gray-600">Here's what's happening with your student union today.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8">
+<div class="bg-white p-6 rounded-xl shadow-sm border hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between mb-4">
+<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+<i class="ri-mail-line text-primary text-xl"></i>
+</div>
+<span class="text-2xl font-bold text-gray-900">${unreadMessages}</span>
+</div>
+<h3 class="text-gray-600 font-medium">New Messages</h3>
+<p class="text-sm text-gray-500 mt-1">Out of ${totalMessages} total</p>
+</div>
+<div class="bg-white p-6 rounded-xl shadow-sm border hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between mb-4">
+<div class="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center">
+<i class="ri-article-line text-secondary text-xl"></i>
+</div>
+<span class="text-2xl font-bold text-gray-900">${publishedPosts}</span>
+</div>
+<h3 class="text-gray-600 font-medium">Published Posts</h3>
+<p class="text-sm text-gray-500 mt-1">${draftPosts} drafts pending</p>
+</div>
+<div class="bg-white p-6 rounded-xl shadow-sm border hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between mb-4">
+<div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+<i class="ri-group-line text-green-600 text-xl"></i>
+</div>
+<span class="text-2xl font-bold text-gray-900">1,247</span>
+</div>
+<h3 class="text-gray-600 font-medium">Active Students</h3>
+<p class="text-sm text-gray-500 mt-1">+12% this month</p>
+</div>
+<div class="bg-white p-6 rounded-xl shadow-sm border hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between mb-4">
+<div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
+<i class="ri-calendar-event-line text-orange-600 text-xl"></i>
+</div>
+<span class="text-2xl font-bold text-gray-900">8</span>
+</div>
+<h3 class="text-gray-600 font-medium">Upcoming Events</h3>
+<p class="text-sm text-gray-500 mt-1">This month</p>
+</div>
+</div>
+<div class="grid lg:grid-cols-2 gap-6 sm:gap-8">
+<div class="bg-white rounded-xl shadow-sm border">
+<div class="p-6 border-b border-gray-200">
+<div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+<h2 class="text-lg font-semibold text-gray-900 mb-2 sm:mb-0">Recent Messages</h2>
+<button onclick="showDashboardSection('messages')" class="text-primary font-medium text-sm hover:text-primary/80 transition-colors">View All</button>
+</div>
+</div>
+<div class="p-6">
+<div class="space-y-4">
+${contactMessages.slice(0, 3).map(message => `
+<div class="flex items-start space-x-3 p-3 bg-gray-50 rounded-lg">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+<i class="ri-user-line text-primary"></i>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between mb-1">
+<h4 class="text-sm font-medium text-gray-900 truncate">${message.firstName} ${message.lastName}</h4>
+<span class="text-xs text-gray-500">${formatTime(message.timestamp)}</span>
+</div>
+<p class="text-sm text-gray-600 line-clamp-2">${message.message}</p>
+<div class="flex items-center mt-2">
+<span class="text-xs px-2 py-1 rounded-full ${getStatusColor(message.status)}">${message.status}</span>
+</div>
+</div>
+</div>
+`).join('')}
+</div>
+</div>
+</div>
+<div class="bg-white rounded-xl shadow-sm border">
+<div class="p-6 border-b border-gray-200">
+<div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+<h2 class="text-lg font-semibold text-gray-900 mb-2 sm:mb-0">Quick Actions</h2>
+</div>
+</div>
+<div class="p-6">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<button onclick="showCreatePost()" class="flex items-center justify-center p-4 border-2 border-dashed border-gray-300 rounded-lg hover:border-primary hover:bg-primary/5 transition-colors group">
+<div class="text-center">
+<i class="ri-add-line text-2xl text-gray-400 group-hover:text-primary mb-2"></i>
+<p class="text-sm font-medium text-gray-600 group-hover:text-primary">Create New Post</p>
+</div>
+</button>
+<button onclick="showDashboardSection('messages')" class="flex items-center justify-center p-4 border-2 border-dashed border-gray-300 rounded-lg hover:border-secondary hover:bg-secondary/5 transition-colors group">
+<div class="text-center">
+<i class="ri-mail-line text-2xl text-gray-400 group-hover:text-secondary mb-2"></i>
+<p class="text-sm font-medium text-gray-600 group-hover:text-secondary">Check Messages</p>
+</div>
+</button>
+</div>
+</div>
+</div>
+</div>
+`;
+}
+function getDashboardMessages() {
+return `
+<div class="mb-6 sm:mb-8">
+<div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+<div class="mb-4 sm:mb-0">
+<h1 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Messages</h1>
+<p class="text-gray-600">Manage contact form submissions and student inquiries</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-2 sm:gap-4">
+<select id="message-filter" class="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20">
+<option value="all">All Messages</option>
+<option value="unread">Unread</option>
+<option value="read">Read</option>
+<option value="replied">Replied</option>
+</select>
+<select id="subject-filter" class="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20">
+<option value="all">All Subjects</option>
+<option value="general">General</option>
+<option value="complaint">Complaint</option>
+<option value="suggestion">Suggestion</option>
+<option value="club">Club Info</option>
+</select>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-xl shadow-sm border overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full">
+<thead class="bg-gray-50 border-b border-gray-200">
+<tr>
+<th class="text-left py-3 px-4 sm:px-6 text-xs font-medium text-gray-500 uppercase tracking-wider">Contact</th>
+<th class="text-left py-3 px-4 text-xs font-medium text-gray-500 uppercase tracking-wider hidden sm:table-cell">Subject</th>
+<th class="text-left py-3 px-4 text-xs font-medium text-gray-500 uppercase tracking-wider hidden md:table-cell">Message</th>
+<th class="text-left py-3 px-4 text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+<th class="text-left py-3 px-4 text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-gray-200">
+${contactMessages.map(message => `
+<tr class="hover:bg-gray-50 ${message.status === 'unread' ? 'bg-blue-50' : ''}">
+<td class="py-4 px-4 sm:px-6">
+<div class="flex items-center">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+<i class="ri-user-line text-primary"></i>
+</div>
+<div class="min-w-0">
+<div class="text-sm font-medium text-gray-900 truncate">${message.firstName} ${message.lastName}</div>
+<div class="text-sm text-gray-500 truncate">${message.email}</div>
+<div class="text-xs text-gray-400 sm:hidden">${formatTime(message.timestamp)}</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4 text-sm text-gray-900 hidden sm:table-cell">
+<span class="px-2 py-1 text-xs rounded-full bg-gray-100 text-gray-800 capitalize">${message.subject}</span>
+</td>
+<td class="py-4 px-4 text-sm text-gray-600 hidden md:table-cell">
+<div class="max-w-xs truncate">${message.message}</div>
+</td>
+<td class="py-4 px-4">
+<span class="px-2 py-1 text-xs rounded-full ${getStatusColor(message.status)} capitalize">${message.status}</span>
+</td>
+<td class="py-4 px-4">
+<div class="flex space-x-2">
+<button onclick="viewMessage(${message.id})" class="text-primary hover:text-primary/80 transition-colors">
+<i class="ri-eye-line"></i>
+</button>
+<button onclick="replyMessage(${message.id})" class="text-secondary hover:text-secondary/80 transition-colors">
+<i class="ri-reply-line"></i>
+</button>
+<button onclick="deleteMessage(${message.id})" class="text-red-500 hover:text-red-700 transition-colors">
+<i class="ri-delete-bin-line"></i>
+</button>
+</div>
+</td>
+</tr>
+`).join('')}
+</tbody>
+</table>
+</div>
+</div>
+`;
+}
+function getDashboardPosts() {
+return `
+<div class="mb-6 sm:mb-8">
+<div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+<div class="mb-4 sm:mb-0">
+<h1 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Posts</h1>
+<p class="text-gray-600">Manage announcements and news posts</p>
+</div>
+<button onclick="showCreatePost()" class="bg-primary text-white px-6 py-2 rounded-button font-medium hover:bg-primary/90 transition-colors !rounded-button">
+<i class="ri-add-line mr-2"></i>Create New Post
+</button>
+</div>
+</div>
+<div class="grid gap-6">
+${posts.map(post => `
+<div class="bg-white rounded-xl shadow-sm border p-6">
+<div class="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4">
+<div class="flex-1">
+<div class="flex items-center space-x-3 mb-2">
+<h3 class="text-lg font-semibold text-gray-900">${post.title}</h3>
+<span class="px-2 py-1 text-xs rounded-full ${post.status === 'published' ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'}">${post.status}</span>
+</div>
+<p class="text-gray-600 mb-3">${post.content.substring(0, 150)}...</p>
+<div class="flex items-center text-sm text-gray-500 space-x-4">
+<span><i class="ri-user-line mr-1"></i>${post.author}</span>
+<span><i class="ri-time-line mr-1"></i>${formatTime(post.timestamp)}</span>
+<span><i class="ri-bookmark-line mr-1"></i>${post.category}</span>
+</div>
+</div>
+<div class="flex space-x-2 mt-4 sm:mt-0">
+<button onclick="editPost(${post.id})" class="text-primary hover:text-primary/80 transition-colors">
+<i class="ri-edit-line"></i>
+</button>
+<button onclick="deletePost(${post.id})" class="text-red-500 hover:text-red-700 transition-colors">
+<i class="ri-delete-bin-line"></i>
+</button>
+</div>
+</div>
+</div>
+`).join('')}
+</div>
+`;
+}
+function getDashboardAnalytics() {
+return `
+<div class="mb-6 sm:mb-8">
+<h1 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Analytics</h1>
+<p class="text-gray-600">View insights and statistics about your student union</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+<div class="bg-white rounded-xl shadow-sm border p-6">
+<h3 class="text-lg font-semibold text-gray-900 mb-4">Monthly Activity</h3>
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<span class="text-gray-600">New Messages</span>
+<span class="font-semibold text-gray-900">24</span>
+</div>
+<div class="w-full bg-gray-200 rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 60%"></div>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-xl shadow-sm border p-6">
+<h3 class="text-lg font-semibold text-gray-900 mb-4">Club Memberships</h3>
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<span class="text-gray-600">Active Members</span>
+<span class="font-semibold text-gray-900">1,247</span>
+</div>
+<div class="w-full bg-gray-200 rounded-full h-2">
+<div class="bg-secondary h-2 rounded-full" style="width: 80%"></div>
+</div>
+</div>
+</div>
+</div>
+`;
+}
+window.showDashboardSection = function(section) {
+const navBtns = document.querySelectorAll('.nav-btn');
+navBtns.forEach(btn => {
+btn.classList.remove('active', 'text-primary', 'font-medium');
+btn.classList.add('text-gray-600');
+});
+event.target.classList.add('active', 'text-primary', 'font-medium');
+event.target.classList.remove('text-gray-600');
+const content = document.getElementById('dashboard-content');
+switch(section) {
+case 'messages':
+content.innerHTML = getDashboardMessages();
+setupMessageFilters();
+break;
+case 'posts':
+content.innerHTML = getDashboardPosts();
+break;
+case 'analytics':
+content.innerHTML = getDashboardAnalytics();
+break;
+default:
+content.innerHTML = getDashboardOverview();
+}
+// Hide mobile menu
+const mobileNav = document.getElementById('mobile-nav');
+if (mobileNav) {
+mobileNav.classList.add('hidden');
+}
+};
+function setupMessageFilters() {
+const messageFilter = document.getElementById('message-filter');
+const subjectFilter = document.getElementById('subject-filter');
+if (messageFilter) {
+messageFilter.addEventListener('change', filterMessages);
+}
+if (subjectFilter) {
+subjectFilter.addEventListener('change', filterMessages);
+}
+}
+function filterMessages() {
+// This would filter the messages in a real application
+showModal('Filter Applied', 'Messages filtered successfully.');
+}
+window.viewMessage = function(messageId) {
+const message = contactMessages.find(m => m.id === messageId);
+if (!message) return;
+// Mark as read
+message.status = 'read';
+const modalOverlay = document.getElementById('modal-overlay');
+const modalContent = document.getElementById('modal-content');
+modalContent.innerHTML = `
+<div class="text-left max-w-2xl">
+<div class="flex items-center justify-between mb-6">
+<h3 class="text-xl font-semibold text-gray-900">Message Details</h3>
+<button onclick="closeModal()" class="text-gray-400 hover:text-gray-600">
+<i class="ri-close-line text-xl"></i>
+</button>
+</div>
+<div class="space-y-4 mb-6">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div>
+<label class="text-sm font-medium text-gray-500">Name</label>
+<p class="text-gray-900">${message.firstName} ${message.lastName}</p>
+</div>
+<div>
+<label class="text-sm font-medium text-gray-500">Email</label>
+<p class="text-gray-900">${message.email}</p>
+</div>
+<div>
+<label class="text-sm font-medium text-gray-500">Phone</label>
+<p class="text-gray-900">${message.phone}</p>
+</div>
+<div>
+<label class="text-sm font-medium text-gray-500">Subject</label>
+<p class="text-gray-900 capitalize">${message.subject}</p>
+</div>
+</div>
+<div>
+<label class="text-sm font-medium text-gray-500">Message</label>
+<p class="text-gray-900 mt-1 p-4 bg-gray-50 rounded-lg">${message.message}</p>
+</div>
+<div>
+<label class="text-sm font-medium text-gray-500">Received</label>
+<p class="text-gray-900">${formatTime(message.timestamp)}</p>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row gap-3">
+<button onclick="replyMessage(${message.id})" class="flex-1 bg-primary text-white py-2 px-4 rounded-button font-medium hover:bg-primary/90 transition-colors !rounded-button">
+<i class="ri-reply-line mr-2"></i>Reply
+</button>
+<button onclick="markAsRead(${message.id})" class="flex-1 bg-secondary text-white py-2 px-4 rounded-button font-medium hover:bg-secondary/90 transition-colors !rounded-button">
+<i class="ri-check-line mr-2"></i>Mark as Read
+</button>
+<button onclick="closeModal()" class="flex-1 border border-gray-300 text-gray-700 py-2 px-4 rounded-button font-medium hover:bg-gray-50 transition-colors !rounded-button">
+Close
+</button>
+</div>
+</div>
+`;
+modalOverlay.classList.remove('hidden');
+};
+window.replyMessage = function(messageId) {
+const message = contactMessages.find(m => m.id === messageId);
+if (!message) return;
+const modalOverlay = document.getElementById('modal-overlay');
+const modalContent = document.getElementById('modal-content');
+modalContent.innerHTML = `
+<div class="text-left max-w-2xl">
+<h3 class="text-xl font-semibold text-gray-900 mb-6">Reply to ${message.firstName} ${message.lastName}</h3>
+<form id="reply-form" class="space-y-4">
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">To</label>
+<input type="email" value="${message.email}" disabled class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-gray-50">
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Subject</label>
+<input type="text" value="Re: ${message.subject}" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20">
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+<textarea rows="6" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 resize-none" placeholder="Type your reply..."></textarea>
+</div>
+<div class="flex flex-col sm:flex-row gap-3 pt-4">
+<button type="submit" class="flex-1 bg-primary text-white py-2 px-4 rounded-button font-medium hover:bg-primary/90 transition-colors !rounded-button">
+<i class="ri-send-plane-line mr-2"></i>Send Reply
+</button>
+<button type="button" onclick="closeModal()" class="flex-1 border border-gray-300 text-gray-700 py-2 px-4 rounded-button font-medium hover:bg-gray-50 transition-colors !rounded-button">
+Cancel
+</button>
+</div>
+</form>
+</div>
+`;
+modalOverlay.classList.remove('hidden');
+document.getElementById('reply-form').addEventListener('submit', function(e) {
+e.preventDefault();
+message.status = 'replied';
+closeModal();
+showModal('Reply Sent', 'Your reply has been sent successfully!');
+showDashboardSection('messages');
+});
+};
+window.showCreatePost = function() {
+const modalOverlay = document.getElementById('modal-overlay');
+const modalContent = document.getElementById('modal-content');
+modalContent.innerHTML = `
+<div class="text-left max-w-3xl">
+<h3 class="text-xl font-semibold text-gray-900 mb-6">Create New Post</h3>
+<form id="create-post-form" class="space-y-6">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Title</label>
+<input type="text" name="title" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20">
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Category</label>
+<select name="category" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 pr-8">
+<option value="">Select category</option>
+<option value="announcement">Announcement</option>
+<option value="news">News</option>
+<option value="event">Event</option>
+<option value="scholarship">Scholarship</option>
+</select>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Content</label>
+<textarea name="content" rows="8" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 resize-none" placeholder="Write your post content..."></textarea>
+</div>
+<div class="flex items-center space-x-4">
+<label class="flex items-center">
+<input type="radio" name="status" value="draft" checked class="mr-2">
+<span class="text-sm text-gray-700">Save as Draft</span>
+</label>
+<label class="flex items-center">
+<input type="radio" name="status" value="published" class="mr-2">
+<span class="text-sm text-gray-700">Publish Now</span>
+</label>
+</div>
+<div class="flex flex-col sm:flex-row gap-3 pt-4">
+<button type="submit" class="flex-1 bg-primary text-white py-3 px-6 rounded-button font-medium hover:bg-primary/90 transition-colors !rounded-button">
+<i class="ri-save-line mr-2"></i>Save Post
+</button>
+<button type="button" onclick="closeModal()" class="flex-1 border border-gray-300 text-gray-700 py-3 px-6 rounded-button font-medium hover:bg-gray-50 transition-colors !rounded-button">
+Cancel
+</button>
+</div>
+</form>
+</div>
+`;
+modalOverlay.classList.remove('hidden');
+document.getElementById('create-post-form').addEventListener('submit', function(e) {
+e.preventDefault();
+const formData = new FormData(this);
+const newPost = {
+id: posts.length + 1,
+title: formData.get('title'),
+content: formData.get('content'),
+category: formData.get('category'),
+status: formData.get('status'),
+author: 'Admin',
+timestamp: new Date().toISOString().slice(0, 19).replace('T', ' ')
+};
+posts.unshift(newPost);
+closeModal();
+showModal('Post Created', `Your post "${newPost.title}" has been ${newPost.status === 'published' ? 'published' : 'saved as draft'} successfully!`);
+showDashboardSection('posts');
+});
+};
+window.deleteMessage = function(messageId) {
+if (confirm('Are you sure you want to delete this message?')) {
+contactMessages = contactMessages.filter(m => m.id !== messageId);
+showDashboardSection('messages');
+showModal('Message Deleted', 'The message has been deleted successfully.');
+}
+};
+window.logoutAdmin = function() {
+if (confirm('Are you sure you want to logout?')) {
+location.reload();
+}
+};
+function formatTime(timestamp) {
+const date = new Date(timestamp);
+return date.toLocaleDateString() + ' ' + date.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+}
+function getStatusColor(status) {
+switch(status) {
+case 'unread': return 'bg-blue-100 text-blue-800';
+case 'read': return 'bg-green-100 text-green-800';
+case 'replied': return 'bg-purple-100 text-purple-800';
+default: return 'bg-gray-100 text-gray-800';
+}
+}
+});
+</script>
+<script id="card-interactions">
+document.addEventListener('DOMContentLoaded', function() {
+const announcementsCard = document.getElementById('announcements-card');
+const clubsCard = document.getElementById('clubs-card');
+const contactCard = document.getElementById('contact-card');
+const exploreBtn = document.getElementById('explore-btn');
+const joinClubBtn = document.getElementById('join-club-btn');
+const clubsData = [
+{
+id: 'Career Development Club (CDC)',
+name: 'Career Development Club (CDC)',
+icon: 'ri-computer-line',
+iconBg: 'bg-blue-100',
+iconColor: 'text-blue-600',
+members: '285',
+shortDescription: 'The Career Development Club (CDC) helps students build career skills through workshops, mentorship, networking, and internship opportunities.',
+description: 'The Career Development Club (CDC) is a student-led organization established to enhance the professional readiness and personal growth of students. The club serves as a platform where members can explore career opportunities, develop employability skills, and gain exposure to various professional environments.Key activities include organizing career workshops, seminars, and training programs; facilitating mentorship and networking opportunities with industry professionals; conducting resume and interview preparation sessions; and arranging industrial visits and internship linkage programs. Through these initiatives, CDC aims to bridge the gap between academic learning and real-world career demands.',
+vision: 'To become a leading student organization that fosters a culture of continuous learning, professional excellence, and innovation, preparing members to be competent, confident, and impactful contributors in their respective fields.',
+mission: 'To support students in identifying and achieving their career aspirations.To provide training and development opportunities that enhance employability and leadership skills.To build strong connections between students, alumni, and industry professionals.To encourage personal growth, teamwork, and professional ethics among members.',
+activities: ['Weekly coding workshops', 'Monthly hackathons', 'Guest speaker sessions', 'Industry networking events', 'Open-source project collaborations'],
+president: {
+name: 'Radiet Degu',
+email: 'radietdegu@gmail.com',
+phone: '+251968154225',
+department: 'Computer Engineering',
+year: '4th Year',
+photo: 'assets/image.png'
+},
+vicePresident: {
+name: 'Hiwot Alemayehu',
+email: 'hiwot.alemayehu@astu.edu.et',
+phone: '+251 91 345 6789',
+department: 'Software Engineering',
+year: '3rd Year',
+photo: 'https://readdy.ai/api/search-image?query=professional%20portrait%20of%20confident%20young%20African%20female%20software%20engineering%20student%20wearing%20professional%20attire%2C%20bright%20smile%2C%20clean%20white%20background%2C%20high%20quality%20headshot%20photography%2C%20natural%20lighting%2C%20tech%20expertise&width=200&height=200&seq=tech_vice&orientation=squarish'
+},
+secretary: {
+name: 'Dawit Mekonnen',
+email: 'dawit.mekonnen@astu.edu.et',
+phone: '+251 91 456 7890',
+department: 'Information Technology',
+year: '2nd Year',
+photo: 'https://readdy.ai/api/search-image?query=professional%20portrait%20of%20young%20African%20male%20IT%20student%20wearing%20casual%20shirt%2C%20friendly%20expression%2C%20clean%20white%20background%2C%20high%20quality%20headshot%20photography%2C%20natural%20lighting%2C%20approachable%20demeanor&width=200&height=200&seq=tech_secretary&orientation=squarish'
+}
+},
+{
+id: 'environmental-society',
+name: ' Sport and Entertainment Club',
+icon: 'ri-plant-line',
+iconBg: 'bg-green-100',
+iconColor: 'text-green-600',
+members: '142',shortDescription: 'The Sport and Entertainment Club promotes fitness, teamwork, and unity through various sports and activities.',
+
+description: 'The Sport and Entertainment Club focuses on promoting teamwork, discipline, and a healthy lifestyle through various sports and recreational activities. Our main areas of focus include football, basketball, chess, and boxing. The club organizes tournaments, training sessions, and friendly matches to help students improve their skills, build confidence, and strengthen unity within the campus community. ',
+mission: 'To inspire and engage students in football, basketball, chess, and boxing by creating opportunities for competition, learning, and entertainment both on and off the field. ',
+vision: 'To build a strong and active student community that values sportsmanship, teamwork, and personal growth through athletic and recreational activities. ',
+activities: ['Campus cleanup drives', 'Tree planting campaigns', 'Recycling programs', 'Environmental awareness workshops', 'Sustainability research projects'],
+president: {
+name: 'Naol Lamesa',
+email: 'Natilamesa27@gmail.com',
+phone: '+251919441722',
+department: 'Environmental Engineering',
+year: '4th Year',
+photo: 'assets/naol.jpg'},
+vicePresident: {
+name: 'Getachew Worku',
+email: 'getachew.worku@astu.edu.et',
+phone: '+251 91 678 9012',
+department: 'Chemical Engineering',
+year: '3rd Year',
+photo: 'https://readdy.ai/api/search-image?query=professional%20portrait%20of%20dedicated%20young%20African%20male%20chemical%20engineering%20student%20wearing%20casual%20attire%2C%20warm%20smile%2C%20clean%20white%20background%2C%20high%20quality%20headshot%20photography%2C%20natural%20lighting%2C%20environmental%20passion&width=200&height=200&seq=env_vice&orientation=squarish'
+},
+secretary: {
+name: 'Almaz Girma',
+email: 'almaz.girma@astu.edu.et',
+phone: '+251 91 789 0123',
+department: 'Civil Engineering',
+year: '2nd Year',
+photo: 'https://readdy.ai/api/search-image?query=professional%20portrait%20of%20enthusiastic%20young%20African%20female%20civil%20engineering%20student%20wearing%20professional%20shirt%2C%20bright%20expression%2C%20clean%20white%20background%2C%20high%20quality%20headshot%20photography%2C%20natural%20lighting%2C%20organizational%20skills&width=200&height=200&seq=env_secretary&orientation=squarish'
+}
+},
+{
+id: 'arts-culture',
+name: 'STEMX Club',
+icon: 'ri-palette-line',
+iconBg: 'bg-purple-100',
+iconColor: 'text-purple-600',
+members: '198',
+shortDescription: 'The STEM & Innovation Club enables students to learn, experiment, and innovate in STEM, focusing on Python, Arduino, and embedded technology.',
+description: 'The STEM & Innovation Club aims to bridge this gap by creating a dedicated platform for students to learn, experiment, and innovate in the fields of Science, Technology, Engineering, and Mathematics — with a special focus on Python programming, Arduino-based systems, and embedded technology.',
+mission: '-Enhance Technical Skills:Provide structured learning experiences in Python, Arduino, electronics , cybersecurity, aerospace and robotics.-Promote Project-Based Learning:Encourage students to design and build real-world projects that solve local or global challenges.-Facilitate Collaboration:Build partnerships with existing university clubs (e.g., CSC Club, A2SV, ISPC, Mechanical and Robotics teams) and external organizations.-Provide Tools and Mentorship:Create a workspace equipped with basic kits, tools, and guidance to help students turn ideas into working prototypes.-Encourage Research and Innovation:Support the development of innovative projects suitable for exhibitions, competitions, and startup incubation.',
+vision: 'To empower students with hands-on experience, problem-solving skills, and innovation-driven mind sets through practical projects, collaboration, and mentorship — fostering a culture of creativity and technical excellence within the university.',
+activities: ['Art exhibitions', 'Theater productions', 'Music concerts', 'Cultural festivals', 'Creative workshops'],
+president: {
+name: 'Naboni Yohannes',
+email: 'nabijohn97@gmail.com',
+phone: '+251 91 890 1234',
+department: 'Fine Arts',
+year: '4th Year',
+photo: 'assets/naboni.jpg'},
+vicePresident: {
+name: 'Solomon Kebede',
+email: 'solomon.kebede@astu.edu.et',
+phone: '+251 91 901 2345',
+department: 'Music',
+year: '3rd Year',
+photo: 'https://readdy.ai/api/search-image?query=professional%20portrait%20of%20talented%20young%20African%20male%20music%20student%20wearing%20casual%20artistic%20attire%2C%20confident%20expression%2C%20clean%20white%20background%2C%20high%20quality%20headshot%20photography%2C%20natural%20lighting%2C%20musical%20talent&width=200&height=200&seq=arts_vice&orientation=squarish'
+},
+secretary: {
+name: 'Rahel Tesfaye',
+email: 'rahel.tesfaye@astu.edu.et',
+phone: '+251 91 012 3456',
+department: 'Theater Arts',
+year: '2nd Year',
+photo: 'https://readdy.ai/api/search-image?query=professional%20portrait%20of%20expressive%20young%20African%20female%20theater%20arts%20student%20wearing%20elegant%20attire%2C%20dramatic%20smile%2C%20clean%20white%20background%2C%20high%20quality%20headshot%20photography%2C%20natural%20lighting%2C%20performance%20arts&width=200&height=200&seq=arts_secretary&orientation=squarish'
+}
+},
+
+{
+id: 'tech-innovation',
+name: 'Career Development Club (CDC)',
+icon: 'ri-computer-line',
+iconBg: 'bg-blue-100',
+iconColor: 'text-blue-600',
+members: '285',
+shortDescription: 'The Career Development Club (CDC) helps students build career skills through workshops, mentorship, networking, and internship opportunities.',
+description: 'The Career Development Club (CDC) is a student-led organization established to enhance the professional readiness and personal growth of students. The club serves as a platform where members can explore career opportunities, develop employability skills, and gain exposure to various professional environments.Key activities include organizing career workshops, seminars, and training programs; facilitating mentorship and networking opportunities with industry professionals; conducting resume and interview preparation sessions; and arranging industrial visits and internship linkage programs. Through these initiatives, CDC aims to bridge the gap between academic learning and real-world career demands.',
+vision: 'To become a leading student organization that fosters a culture of continuous learning, professional excellence, and innovation, preparing members to be competent, confident, and impactful contributors in their respective fields.',
+mission: 'To support students in identifying and achieving their career aspirations.To provide training and development opportunities that enhance employability and leadership skills.To build strong connections between students, alumni, and industry professionals.To encourage personal growth, teamwork, and professional ethics among members.',
+activities: ['Weekly coding workshops', 'Monthly hackathons', 'Guest speaker sessions', 'Industry networking events', 'Open-source project collaborations'],
+president: {
+name: 'Radiet Degu',
+email: 'radietdegu@gmail.com',
+phone: '+251968154225',
+department: 'Computer Engineering',
+year: '4th Year',
+photo: 'assets/image.png'
+},
+vicePresident: {
+name: 'Hiwot Alemayehu',
+email: 'hiwot.alemayehu@astu.edu.et',
+phone: '+251 91 345 6789',
+department: 'Software Engineering',
+year: '3rd Year',
+photo: 'https://readdy.ai/api/search-image?query=professional%20portrait%20of%20confident%20young%20African%20female%20software%20engineering%20student%20wearing%20professional%20attire%2C%20bright%20smile%2C%20clean%20white%20background%2C%20high%20quality%20headshot%20photography%2C%20natural%20lighting%2C%20tech%20expertise&width=200&height=200&seq=tech_vice&orientation=squarish'
+},
+secretary: {
+name: 'Dawit Mekonnen',
+email: 'dawit.mekonnen@astu.edu.et',
+phone: '+251 91 456 7890',
+department: 'Information Technology',
+year: '2nd Year',
+photo: 'https://readdy.ai/api/search-image?query=professional%20portrait%20of%20young%20African%20male%20IT%20student%20wearing%20casual%20shirt%2C%20friendly%20expression%2C%20clean%20white%20background%2C%20high%20quality%20headshot%20photography%2C%20natural%20lighting%2C%20approachable%20demeanor&width=200&height=200&seq=tech_secretary&orientation=squarish'
+}
+},
+{
+id: 'environmental-society',
+name: ' Sport and Entertainment Club',
+icon: 'ri-plant-line',
+iconBg: 'bg-green-100',
+iconColor: 'text-green-600',
+members: '142',shortDescription: 'The Sport and Entertainment Club promotes fitness, teamwork, and unity through various sports and activities.',
+
+description: 'The Sport and Entertainment Club focuses on promoting teamwork, discipline, and a healthy lifestyle through various sports and recreational activities. Our main areas of focus include football, basketball, chess, and boxing. The club organizes tournaments, training sessions, and friendly matches to help students improve their skills, build confidence, and strengthen unity within the campus community. ',
+mission: 'To inspire and engage students in football, basketball, chess, and boxing by creating opportunities for competition, learning, and entertainment both on and off the field. ',
+vision: 'To build a strong and active student community that values sportsmanship, teamwork, and personal growth through athletic and recreational activities. ',
+activities: ['Campus cleanup drives', 'Tree planting campaigns', 'Recycling programs', 'Environmental awareness workshops', 'Sustainability research projects'],
+president: {
+name: 'Naol Lamesa',
+email: 'Natilamesa27@gmail.com',
+phone: '+251919441722',
+department: 'Environmental Engineering',
+year: '4th Year',
+photo: 'assets/naol.jpg'},
+vicePresident: {
+name: 'Getachew Worku',
+email: 'getachew.worku@astu.edu.et',
+phone: '+251 91 678 9012',
+department: 'Chemical Engineering',
+year: '3rd Year',
+photo: 'https://readdy.ai/api/search-image?query=professional%20portrait%20of%20dedicated%20young%20African%20male%20chemical%20engineering%20student%20wearing%20casual%20attire%2C%20warm%20smile%2C%20clean%20white%20background%2C%20high%20quality%20headshot%20photography%2C%20natural%20lighting%2C%20environmental%20passion&width=200&height=200&seq=env_vice&orientation=squarish'
+},
+secretary: {
+name: 'Almaz Girma',
+email: 'almaz.girma@astu.edu.et',
+phone: '+251 91 789 0123',
+department: 'Civil Engineering',
+year: '2nd Year',
+photo: 'https://readdy.ai/api/search-image?query=professional%20portrait%20of%20enthusiastic%20young%20African%20female%20civil%20engineering%20student%20wearing%20professional%20shirt%2C%20bright%20expression%2C%20clean%20white%20background%2C%20high%20quality%20headshot%20photography%2C%20natural%20lighting%2C%20organizational%20skills&width=200&height=200&seq=env_secretary&orientation=squarish'
+}
+},
+{
+id: 'arts-culture',
+name: 'STEMX Club',
+icon: 'ri-palette-line',
+iconBg: 'bg-purple-100',
+iconColor: 'text-purple-600',
+members: '198',
+shortDescription: 'The STEM & Innovation Club enables students to learn, experiment, and innovate in STEM, focusing on Python, Arduino, and embedded technology.',
+description: 'The STEM & Innovation Club aims to bridge this gap by creating a dedicated platform for students to learn, experiment, and innovate in the fields of Science, Technology, Engineering, and Mathematics — with a special focus on Python programming, Arduino-based systems, and embedded technology.',
+mission: '-Enhance Technical Skills:Provide structured learning experiences in Python, Arduino, electronics , cybersecurity, aerospace and robotics.-Promote Project-Based Learning:Encourage students to design and build real-world projects that solve local or global challenges.-Facilitate Collaboration:Build partnerships with existing university clubs (e.g., CSC Club, A2SV, ISPC, Mechanical and Robotics teams) and external organizations.-Provide Tools and Mentorship:Create a workspace equipped with basic kits, tools, and guidance to help students turn ideas into working prototypes.-Encourage Research and Innovation:Support the development of innovative projects suitable for exhibitions, competitions, and startup incubation.',
+vision: 'To empower students with hands-on experience, problem-solving skills, and innovation-driven mind sets through practical projects, collaboration, and mentorship — fostering a culture of creativity and technical excellence within the university.',
+activities: ['Art exhibitions', 'Theater productions', 'Music concerts', 'Cultural festivals', 'Creative workshops'],
+president: {
+name: 'Naboni Yohannes',
+email: 'nabijohn97@gmail.com',
+phone: '+251 91 890 1234',
+department: 'Fine Arts',
+year: '4th Year',
+photo: 'assets/naboni.jpg'},
+vicePresident: {
+name: 'Solomon Kebede',
+email: 'solomon.kebede@astu.edu.et',
+phone: '+251 91 901 2345',
+department: 'Music',
+year: '3rd Year',
+photo: 'https://readdy.ai/api/search-image?query=professional%20portrait%20of%20talented%20young%20African%20male%20music%20student%20wearing%20casual%20artistic%20attire%2C%20confident%20expression%2C%20clean%20white%20background%2C%20high%20quality%20headshot%20photography%2C%20natural%20lighting%2C%20musical%20talent&width=200&height=200&seq=arts_vice&orientation=squarish'
+},
+secretary: {
+name: 'Rahel Tesfaye',
+email: 'rahel.tesfaye@astu.edu.et',
+phone: '+251 91 012 3456',
+department: 'Theater Arts',
+year: '2nd Year',
+photo: 'https://readdy.ai/api/search-image?query=professional%20portrait%20of%20expressive%20young%20African%20female%20theater%20arts%20student%20wearing%20elegant%20attire%2C%20dramatic%20smile%2C%20clean%20white%20background%2C%20high%20quality%20headshot%20photography%2C%20natural%20lighting%2C%20performance%20arts&width=200&height=200&seq=arts_secretary&orientation=squarish'
+}
+},
+{
+id: 'tech-innovation',
+name: 'Career Development Club (CDC)',
+icon: 'ri-computer-line',
+iconBg: 'bg-blue-100',
+iconColor: 'text-blue-600',
+members: '285',
+shortDescription: 'The Career Development Club (CDC) helps students build career skills through workshops, mentorship, networking, and internship opportunities.',
+description: 'The Career Development Club (CDC) is a student-led organization established to enhance the professional readiness and personal growth of students. The club serves as a platform where members can explore career opportunities, develop employability skills, and gain exposure to various professional environments.Key activities include organizing career workshops, seminars, and training programs; facilitating mentorship and networking opportunities with industry professionals; conducting resume and interview preparation sessions; and arranging industrial visits and internship linkage programs. Through these initiatives, CDC aims to bridge the gap between academic learning and real-world career demands.',
+vision: 'To become a leading student organization that fosters a culture of continuous learning, professional excellence, and innovation, preparing members to be competent, confident, and impactful contributors in their respective fields.',
+mission: 'To support students in identifying and achieving their career aspirations.To provide training and development opportunities that enhance employability and leadership skills.To build strong connections between students, alumni, and industry professionals.To encourage personal growth, teamwork, and professional ethics among members.',
+activities: ['Weekly coding workshops', 'Monthly hackathons', 'Guest speaker sessions', 'Industry networking events', 'Open-source project collaborations'],
+president: {
+name: 'Radiet Degu',
+email: 'radietdegu@gmail.com',
+phone: '+251968154225',
+department: 'Computer Engineering',
+year: '4th Year',
+photo: 'assets/image.png'
+},
+vicePresident: {
+name: 'Hiwot Alemayehu',
+email: 'hiwot.alemayehu@astu.edu.et',
+phone: '+251 91 345 6789',
+department: 'Software Engineering',
+year: '3rd Year',
+photo: 'https://readdy.ai/api/search-image?query=professional%20portrait%20of%20confident%20young%20African%20female%20software%20engineering%20student%20wearing%20professional%20attire%2C%20bright%20smile%2C%20clean%20white%20background%2C%20high%20quality%20headshot%20photography%2C%20natural%20lighting%2C%20tech%20expertise&width=200&height=200&seq=tech_vice&orientation=squarish'
+},
+secretary: {
+name: 'Dawit Mekonnen',
+email: 'dawit.mekonnen@astu.edu.et',
+phone: '+251 91 456 7890',
+department: 'Information Technology',
+year: '2nd Year',
+photo: 'https://readdy.ai/api/search-image?query=professional%20portrait%20of%20young%20African%20male%20IT%20student%20wearing%20casual%20shirt%2C%20friendly%20expression%2C%20clean%20white%20background%2C%20high%20quality%20headshot%20photography%2C%20natural%20lighting%2C%20approachable%20demeanor&width=200&height=200&seq=tech_secretary&orientation=squarish'
+}
+},
+{
+id: 'environmental-society',
+name: ' Sport and Entertainment Club',
+icon: 'ri-plant-line',
+iconBg: 'bg-green-100',
+iconColor: 'text-green-600',
+members: '142',shortDescription: 'The Sport and Entertainment Club promotes fitness, teamwork, and unity through various sports and activities.',
+
+description: 'The Sport and Entertainment Club focuses on promoting teamwork, discipline, and a healthy lifestyle through various sports and recreational activities. Our main areas of focus include football, basketball, chess, and boxing. The club organizes tournaments, training sessions, and friendly matches to help students improve their skills, build confidence, and strengthen unity within the campus community. ',
+mission: 'To inspire and engage students in football, basketball, chess, and boxing by creating opportunities for competition, learning, and entertainment both on and off the field. ',
+vision: 'To build a strong and active student community that values sportsmanship, teamwork, and personal growth through athletic and recreational activities. ',
+activities: ['Campus cleanup drives', 'Tree planting campaigns', 'Recycling programs', 'Environmental awareness workshops', 'Sustainability research projects'],
+president: {
+name: 'Naol Lamesa',
+email: 'Natilamesa27@gmail.com',
+phone: '+251919441722',
+department: 'Environmental Engineering',
+year: '4th Year',
+photo: 'assets/naol.jpg'},
+vicePresident: {
+name: 'Getachew Worku',
+email: 'getachew.worku@astu.edu.et',
+phone: '+251 91 678 9012',
+department: 'Chemical Engineering',
+year: '3rd Year',
+photo: 'https://readdy.ai/api/search-image?query=professional%20portrait%20of%20dedicated%20young%20African%20male%20chemical%20engineering%20student%20wearing%20casual%20attire%2C%20warm%20smile%2C%20clean%20white%20background%2C%20high%20quality%20headshot%20photography%2C%20natural%20lighting%2C%20environmental%20passion&width=200&height=200&seq=env_vice&orientation=squarish'
+},
+secretary: {
+name: 'Almaz Girma',
+email: 'almaz.girma@astu.edu.et',
+phone: '+251 91 789 0123',
+department: 'Civil Engineering',
+year: '2nd Year',
+photo: 'https://readdy.ai/api/search-image?query=professional%20portrait%20of%20enthusiastic%20young%20African%20female%20civil%20engineering%20student%20wearing%20professional%20shirt%2C%20bright%20expression%2C%20clean%20white%20background%2C%20high%20quality%20headshot%20photography%2C%20natural%20lighting%2C%20organizational%20skills&width=200&height=200&seq=env_secretary&orientation=squarish'
+}
+},
+{
+id: 'arts-culture',
+name: 'STEMX Club',
+icon: 'ri-palette-line',
+iconBg: 'bg-purple-100',
+iconColor: 'text-purple-600',
+members: '198',
+shortDescription: 'The STEM & Innovation Club enables students to learn, experiment, and innovate in STEM, focusing on Python, Arduino, and embedded technology.',
+description: 'The STEM & Innovation Club aims to bridge this gap by creating a dedicated platform for students to learn, experiment, and innovate in the fields of Science, Technology, Engineering, and Mathematics — with a special focus on Python programming, Arduino-based systems, and embedded technology.',
+mission: '-Enhance Technical Skills:Provide structured learning experiences in Python, Arduino, electronics , cybersecurity, aerospace and robotics.-Promote Project-Based Learning:Encourage students to design and build real-world projects that solve local or global challenges.-Facilitate Collaboration:Build partnerships with existing university clubs (e.g., CSC Club, A2SV, ISPC, Mechanical and Robotics teams) and external organizations.-Provide Tools and Mentorship:Create a workspace equipped with basic kits, tools, and guidance to help students turn ideas into working prototypes.-Encourage Research and Innovation:Support the development of innovative projects suitable for exhibitions, competitions, and startup incubation.',
+vision: 'To empower students with hands-on experience, problem-solving skills, and innovation-driven mind sets through practical projects, collaboration, and mentorship — fostering a culture of creativity and technical excellence within the university.',
+activities: ['Art exhibitions', 'Theater productions', 'Music concerts', 'Cultural festivals', 'Creative workshops'],
+president: {
+name: 'Naboni Yohannes',
+email: 'nabijohn97@gmail.com',
+phone: '+251 91 890 1234',
+department: 'Fine Arts',
+year: '4th Year',
+photo: 'assets/naboni.jpg'},
+vicePresident: {
+name: 'Solomon Kebede',
+email: 'solomon.kebede@astu.edu.et',
+phone: '+251 91 901 2345',
+department: 'Music',
+year: '3rd Year',
+photo: 'https://readdy.ai/api/search-image?query=professional%20portrait%20of%20talented%20young%20African%20male%20music%20student%20wearing%20casual%20artistic%20attire%2C%20confident%20expression%2C%20clean%20white%20background%2C%20high%20quality%20headshot%20photography%2C%20natural%20lighting%2C%20musical%20talent&width=200&height=200&seq=arts_vice&orientation=squarish'
+},
+secretary: {
+name: 'Rahel Tesfaye',
+email: 'rahel.tesfaye@astu.edu.et',
+phone: '+251 91 012 3456',
+department: 'Theater Arts',
+year: '2nd Year',
+photo: 'https://readdy.ai/api/search-image?query=professional%20portrait%20of%20expressive%20young%20African%20female%20theater%20arts%20student%20wearing%20elegant%20attire%2C%20dramatic%20smile%2C%20clean%20white%20background%2C%20high%20quality%20headshot%20photography%2C%20natural%20lighting%2C%20performance%20arts&width=200&height=200&seq=arts_secretary&orientation=squarish'
+}
+},
+
+{
+id: 'tech-innovation',
+name: 'Career Development Club (CDC)',
+icon: 'ri-computer-line',
+iconBg: 'bg-blue-100',
+iconColor: 'text-blue-600',
+members: '285',
+shortDescription: 'The Career Development Club (CDC) helps students build career skills through workshops, mentorship, networking, and internship opportunities.',
+description: 'The Career Development Club (CDC) is a student-led organization established to enhance the professional readiness and personal growth of students. The club serves as a platform where members can explore career opportunities, develop employability skills, and gain exposure to various professional environments.Key activities include organizing career workshops, seminars, and training programs; facilitating mentorship and networking opportunities with industry professionals; conducting resume and interview preparation sessions; and arranging industrial visits and internship linkage programs. Through these initiatives, CDC aims to bridge the gap between academic learning and real-world career demands.',
+vision: 'To become a leading student organization that fosters a culture of continuous learning, professional excellence, and innovation, preparing members to be competent, confident, and impactful contributors in their respective fields.',
+mission: 'To support students in identifying and achieving their career aspirations.To provide training and development opportunities that enhance employability and leadership skills.To build strong connections between students, alumni, and industry professionals.To encourage personal growth, teamwork, and professional ethics among members.',
+activities: ['Weekly coding workshops', 'Monthly hackathons', 'Guest speaker sessions', 'Industry networking events', 'Open-source project collaborations'],
+president: {
+name: 'Radiet Degu',
+email: 'radietdegu@gmail.com',
+phone: '+251968154225',
+department: 'Computer Engineering',
+year: '4th Year',
+photo: 'assets/image.png'
+},
+vicePresident: {
+name: 'Hiwot Alemayehu',
+email: 'hiwot.alemayehu@astu.edu.et',
+phone: '+251 91 345 6789',
+department: 'Software Engineering',
+year: '3rd Year',
+photo: 'https://readdy.ai/api/search-image?query=professional%20portrait%20of%20confident%20young%20African%20female%20software%20engineering%20student%20wearing%20professional%20attire%2C%20bright%20smile%2C%20clean%20white%20background%2C%20high%20quality%20headshot%20photography%2C%20natural%20lighting%2C%20tech%20expertise&width=200&height=200&seq=tech_vice&orientation=squarish'
+},
+secretary: {
+name: 'Dawit Mekonnen',
+email: 'dawit.mekonnen@astu.edu.et',
+phone: '+251 91 456 7890',
+department: 'Information Technology',
+year: '2nd Year',
+photo: 'https://readdy.ai/api/search-image?query=professional%20portrait%20of%20young%20African%20male%20IT%20student%20wearing%20casual%20shirt%2C%20friendly%20expression%2C%20clean%20white%20background%2C%20high%20quality%20headshot%20photography%2C%20natural%20lighting%2C%20approachable%20demeanor&width=200&height=200&seq=tech_secretary&orientation=squarish'
+}
+},
+{
+id: 'environmental-society',
+name: ' Sport and Entertainment Club',
+icon: 'ri-plant-line',
+iconBg: 'bg-green-100',
+iconColor: 'text-green-600',
+members: '142',shortDescription: 'The Sport and Entertainment Club promotes fitness, teamwork, and unity through various sports and activities.',
+
+description: 'The Sport and Entertainment Club focuses on promoting teamwork, discipline, and a healthy lifestyle through various sports and recreational activities. Our main areas of focus include football, basketball, chess, and boxing. The club organizes tournaments, training sessions, and friendly matches to help students improve their skills, build confidence, and strengthen unity within the campus community. ',
+mission: 'To inspire and engage students in football, basketball, chess, and boxing by creating opportunities for competition, learning, and entertainment both on and off the field. ',
+vision: 'To build a strong and active student community that values sportsmanship, teamwork, and personal growth through athletic and recreational activities. ',
+activities: ['Campus cleanup drives', 'Tree planting campaigns', 'Recycling programs', 'Environmental awareness workshops', 'Sustainability research projects'],
+president: {
+name: 'Naol Lamesa',
+email: 'Natilamesa27@gmail.com',
+phone: '+251919441722',
+department: 'Environmental Engineering',
+year: '4th Year',
+photo: 'assets/naol.jpg'},
+vicePresident: {
+name: 'Getachew Worku',
+email: 'getachew.worku@astu.edu.et',
+phone: '+251 91 678 9012',
+department: 'Chemical Engineering',
+year: '3rd Year',
+photo: 'https://readdy.ai/api/search-image?query=professional%20portrait%20of%20dedicated%20young%20African%20male%20chemical%20engineering%20student%20wearing%20casual%20attire%2C%20warm%20smile%2C%20clean%20white%20background%2C%20high%20quality%20headshot%20photography%2C%20natural%20lighting%2C%20environmental%20passion&width=200&height=200&seq=env_vice&orientation=squarish'
+},
+secretary: {
+name: 'Almaz Girma',
+email: 'almaz.girma@astu.edu.et',
+phone: '+251 91 789 0123',
+department: 'Civil Engineering',
+year: '2nd Year',
+photo: 'https://readdy.ai/api/search-image?query=professional%20portrait%20of%20enthusiastic%20young%20African%20female%20civil%20engineering%20student%20wearing%20professional%20shirt%2C%20bright%20expression%2C%20clean%20white%20background%2C%20high%20quality%20headshot%20photography%2C%20natural%20lighting%2C%20organizational%20skills&width=200&height=200&seq=env_secretary&orientation=squarish'
+}
+},
+{
+id: 'arts-culture',
+name: 'STEMX Club',
+icon: 'ri-palette-line',
+iconBg: 'bg-purple-100',
+iconColor: 'text-purple-600',
+members: '198',
+shortDescription: 'The STEM & Innovation Club enables students to learn, experiment, and innovate in STEM, focusing on Python, Arduino, and embedded technology.',
+description: 'The STEM & Innovation Club aims to bridge this gap by creating a dedicated platform for students to learn, experiment, and innovate in the fields of Science, Technology, Engineering, and Mathematics — with a special focus on Python programming, Arduino-based systems, and embedded technology.',
+mission: '-Enhance Technical Skills:Provide structured learning experiences in Python, Arduino, electronics , cybersecurity, aerospace and robotics.-Promote Project-Based Learning:Encourage students to design and build real-world projects that solve local or global challenges.-Facilitate Collaboration:Build partnerships with existing university clubs (e.g., CSC Club, A2SV, ISPC, Mechanical and Robotics teams) and external organizations.-Provide Tools and Mentorship:Create a workspace equipped with basic kits, tools, and guidance to help students turn ideas into working prototypes.-Encourage Research and Innovation:Support the development of innovative projects suitable for exhibitions, competitions, and startup incubation.',
+vision: 'To empower students with hands-on experience, problem-solving skills, and innovation-driven mind sets through practical projects, collaboration, and mentorship — fostering a culture of creativity and technical excellence within the university.',
+activities: ['Art exhibitions', 'Theater productions', 'Music concerts', 'Cultural festivals', 'Creative workshops'],
+president: {
+name: 'Naboni Yohannes',
+email: 'nabijohn97@gmail.com',
+phone: '+251 91 890 1234',
+department: 'Fine Arts',
+year: '4th Year',
+photo: 'assets/naboni.jpg'},
+vicePresident: {
+name: 'Solomon Kebede',
+email: 'solomon.kebede@astu.edu.et',
+phone: '+251 91 901 2345',
+department: 'Music',
+year: '3rd Year',
+photo: 'https://readdy.ai/api/search-image?query=professional%20portrait%20of%20talented%20young%20African%20male%20music%20student%20wearing%20casual%20artistic%20attire%2C%20confident%20expression%2C%20clean%20white%20background%2C%20high%20quality%20headshot%20photography%2C%20natural%20lighting%2C%20musical%20talent&width=200&height=200&seq=arts_vice&orientation=squarish'
+},
+secretary: {
+name: 'Rahel Tesfaye',
+email: 'rahel.tesfaye@astu.edu.et',
+phone: '+251 91 012 3456',
+department: 'Theater Arts',
+year: '2nd Year',
+photo: 'https://readdy.ai/api/search-image?query=professional%20portrait%20of%20expressive%20young%20African%20female%20theater%20arts%20student%20wearing%20elegant%20attire%2C%20dramatic%20smile%2C%20clean%20white%20background%2C%20high%20quality%20headshot%20photography%2C%20natural%20lighting%2C%20performance%20arts&width=200&height=200&seq=arts_secretary&orientation=squarish'
+}
+},
+{
+id: 'arts-culture',
+name: 'STEMX Club',
+icon: 'ri-palette-line',
+iconBg: 'bg-purple-100',
+iconColor: 'text-purple-600',
+members: '198',
+shortDescription: 'The STEM & Innovation Club enables students to learn, experiment, and innovate in STEM, focusing on Python, Arduino, and embedded technology.',
+description: 'The STEM & Innovation Club aims to bridge this gap by creating a dedicated platform for students to learn, experiment, and innovate in the fields of Science, Technology, Engineering, and Mathematics — with a special focus on Python programming, Arduino-based systems, and embedded technology.',
+mission: '-Enhance Technical Skills:Provide structured learning experiences in Python, Arduino, electronics , cybersecurity, aerospace and robotics.-Promote Project-Based Learning:Encourage students to design and build real-world projects that solve local or global challenges.-Facilitate Collaboration:Build partnerships with existing university clubs (e.g., CSC Club, A2SV, ISPC, Mechanical and Robotics teams) and external organizations.-Provide Tools and Mentorship:Create a workspace equipped with basic kits, tools, and guidance to help students turn ideas into working prototypes.-Encourage Research and Innovation:Support the development of innovative projects suitable for exhibitions, competitions, and startup incubation.',
+vision: 'To empower students with hands-on experience, problem-solving skills, and innovation-driven mind sets through practical projects, collaboration, and mentorship — fostering a culture of creativity and technical excellence within the university.',
+activities: ['Art exhibitions', 'Theater productions', 'Music concerts', 'Cultural festivals', 'Creative workshops'],
+president: {
+name: 'Naboni Yohannes',
+email: 'nabijohn97@gmail.com',
+phone: '+251 91 890 1234',
+department: 'Fine Arts',
+year: '4th Year',
+photo: 'assets/naboni.jpg'},
+vicePresident: {
+name: 'Solomon Kebede',
+email: 'solomon.kebede@astu.edu.et',
+phone: '+251 91 901 2345',
+department: 'Music',
+year: '3rd Year',
+photo: 'https://readdy.ai/api/search-image?query=professional%20portrait%20of%20talented%20young%20African%20male%20music%20student%20wearing%20casual%20artistic%20attire%2C%20confident%20expression%2C%20clean%20white%20background%2C%20high%20quality%20headshot%20photography%2C%20natural%20lighting%2C%20musical%20talent&width=200&height=200&seq=arts_vice&orientation=squarish'
+},
+secretary: {
+name: 'Rahel Tesfaye',
+email: 'rahel.tesfaye@astu.edu.et',
+phone: '+251 91 012 3456',
+department: 'Theater Arts',
+year: '2nd Year',
+photo: 'https://readdy.ai/api/search-image?query=professional%20portrait%20of%20expressive%20young%20African%20female%20theater%20arts%20student%20wearing%20elegant%20attire%2C%20dramatic%20smile%2C%20clean%20white%20background%2C%20high%20quality%20headshot%20photography%2C%20natural%20lighting%2C%20performance%20arts&width=200&height=200&seq=arts_secretary&orientation=squarish'
+}
+}
+];
+const announcementsData = [
+{
+id: 'student-elections',
+title: 'Annual Student Elections',
+date: 'November 15, 2024',
+category: 'Event',
+icon: 'ri-calendar-line',
+iconBg: 'bg-primary/10',
+iconColor: 'text-primary',
+shortDescription: 'Nominations are now open for the 2024-2025 Student Union executive positions. Apply by December 1st.',
+fullContent: `
+<h3 class="text-2xl font-bold text-gray-900 mb-4">Annual Student Elections - Call for Nominations</h3>
+<div class="text-gray-600 mb-6">
+<p class="mb-4">The ASTU Student Union is pleased to announce that nominations are now open for the 2024-2025 academic year executive positions. This is your opportunity to make a difference in student life and represent your fellow students.</p>
+<h4 class="text-lg font-semibold text-gray-900 mb-2">Available Positions:</h4>
+<ul class="list-disc pl-6 mb-4">
+<li>President</li>
+<li>Vice President</li>
+<li>General Secretary</li>
+<li>Treasurer</li>
+<li>Public Relations Officer</li>
+</ul>
+<h4 class="text-lg font-semibold text-gray-900 mb-2">Eligibility Requirements:</h4>
+<ul class="list-disc pl-6 mb-4">
+<li>Must be a registered ASTU student</li>
+<li>Minimum GPA of 2.5</li>
+<li>No disciplinary actions in the past year</li>
+<li>Must have completed at least one full semester</li>
+</ul>
+<h4 class="text-lg font-semibold text-gray-900 mb-2">Important Dates:</h4>
+<ul class="list-disc pl-6 mb-4">
+<li>Nomination Period: November 15 - December 1, 2024</li>
+<li>Campaign Period: December 2 - December 15, 2024</li>
+<li>Voting Day: December 16, 2024</li>
+<li>Results Announcement: December 17, 2024</li>
+</ul>
+<p class="mb-4">To submit your nomination, visit the Student Union office with completed nomination forms and required documents. Campaign guidelines and election procedures will be shared with all candidates.</p>
+<p>For questions, contact the Electoral Commission at elections@astu.edu.et</p>
+</div>
+`
+},
+{
+id: 'scholarship-opportunities',
+title: 'Scholarship Opportunities',
+date: 'November 12, 2024',
+category: 'Scholarship',
+icon: 'ri-gift-line',
+iconBg: 'bg-secondary/10',
+iconColor: 'text-secondary',
+shortDescription: 'New merit-based scholarships available for outstanding students. Applications due November 30th.',
+fullContent: `
+<h3 class="text-2xl font-bold text-gray-900 mb-4">Merit-Based Scholarship Program 2024</h3>
+<div class="text-gray-600 mb-6">
+<p class="mb-4">We are excited to announce the availability of merit-based scholarships for exceptional students who demonstrate academic excellence, leadership potential, and community involvement.</p>
+<h4 class="text-lg font-semibold text-gray-900 mb-2">Scholarship Categories:</h4>
+<ul class="list-disc pl-6 mb-4">
+<li><strong>Academic Excellence Scholarship:</strong> $2,000 per semester</li>
+<li><strong>Leadership Impact Scholarship:</strong> $1,500 per semester</li>
+<li><strong>Community Service Scholarship:</strong> $1,000 per semester</li>
+<li><strong>Innovation & Research Scholarship:</strong> $2,500 per semester</li>
+</ul>
+<h4 class="text-lg font-semibold text-gray-900 mb-2">Eligibility Criteria:</h4>
+<ul class="list-disc pl-6 mb-4">
+<li>Minimum GPA of 3.5</li>
+<li>Active participation in campus activities</li>
+<li>Demonstrated leadership experience</li>
+<li>Financial need assessment</li>
+<li>Letter of recommendation from faculty member</li>
+</ul>
+<h4 class="text-lg font-semibold text-gray-900 mb-2">Required Documents:</h4>
+<ul class="list-disc pl-6 mb-4">
+<li>Completed application form</li>
+<li>Official transcripts</li>
+<li>Personal statement (500 words)</li>
+<li>Two letters of recommendation</li>
+<li>Proof of community service</li>
+</ul>
+<p class="mb-4">Applications must be submitted by November 30, 2024, at 11:59 PM. Late applications will not be considered.</p>
+<p>Download application forms from the Student Services website or visit our office for assistance.</p>
+</div>
+`
+},
+{
+id: 'cultural-festival',
+title: 'Cultural Festival 2024',
+date: 'November 10, 2024',
+category: 'Event',
+icon: 'ri-celebration-line',
+iconBg: 'bg-green-100',
+iconColor: 'text-green-600',
+shortDescription: 'Join us for three days of cultural celebration featuring music, dance, food, and art from December 5-7.',
+fullContent: `
+<h3 class="text-2xl font-bold text-gray-900 mb-4">ASTU Cultural Festival 2024: Celebrating Diversity</h3>
+<div class="text-gray-600 mb-6">
+<p class="mb-4">Join us for our annual Cultural Festival, a vibrant three-day celebration of the rich diversity within our university community. This year's theme is "Unity in Diversity" - showcasing traditions, arts, and cultures from across Ethiopia and beyond.</p>
+<h4 class="text-lg font-semibold text-gray-900 mb-2">Festival Schedule:</h4>
+<div class="mb-4">
+<h5 class="font-semibold text-gray-800">Day 1 - December 5, 2024: Traditional Arts & Crafts</h5>
+<ul class="list-disc pl-6 mb-3">
+<li>10:00 AM - Opening Ceremony</li>
+<li>11:00 AM - Traditional Craft Exhibitions</li>
+<li>2:00 PM - Art Workshop Sessions</li>
+<li>4:00 PM - Poetry and Storytelling</li>
+<li>7:00 PM - Traditional Fashion Show</li>
+</ul>
+<h5 class="font-semibold text-gray-800">Day 2 - December 6, 2024: Music & Dance</h5>
+<ul class="list-disc pl-6 mb-3">
+<li>10:00 AM - Cultural Dance Workshops</li>
+<li>1:00 PM - Student Band Performances</li>
+<li>3:00 PM - Traditional Music Concert</li>
+<li>6:00 PM - International Dance Competition</li>
+<li>8:00 PM - Grand Cultural Night</li>
+</ul>
+<h5 class="font-semibold text-gray-800">Day 3 - December 7, 2024: Food & Community</h5>
+<ul class="list-disc pl-6 mb-4">
+<li>10:00 AM - Cultural Food Festival</li>
+<li>12:00 PM - Cooking Demonstrations</li>
+<li>3:00 PM - Community Service Fair</li>
+<li>5:00 PM - Cultural Quiz Competition</li>
+<li>7:00 PM - Closing Ceremony & Awards</li>
+</ul>
+</div>
+<h4 class="text-lg font-semibold text-gray-900 mb-2">How to Participate:</h4>
+<ul class="list-disc pl-6 mb-4">
+<li>Register at the Student Union office</li>
+<li>Submit performance applications by November 25</li>
+<li>Volunteer opportunities available</li>
+<li>Food vendors: apply by November 20</li>
+</ul>
+<p class="mb-4">All events are free and open to the university community. Don't miss this incredible celebration of our diverse heritage!</p>
+<p>For more information, contact the Cultural Committee at culture@astu.edu.et</p>
+</div>
+`
+}
+];
+if (announcementsCard) {
+announcementsCard.addEventListener('click', function() {
+document.getElementById('announcements').scrollIntoView({ behavior: 'smooth' });
+});
+}
+if (clubsCard) {
+clubsCard.addEventListener('click', function() {
+document.getElementById('clubs').scrollIntoView({ behavior: 'smooth' });
+});
+}
+if (contactCard) {
+contactCard.addEventListener('click', function() {
+document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+});
+}
+if (exploreBtn) {
+exploreBtn.addEventListener('click', function() {
+document.getElementById('quick-access').scrollIntoView({ behavior: 'smooth' });
+});
+}
+if (joinClubBtn) {
+joinClubBtn.addEventListener('click', function() {
+document.getElementById('clubs').scrollIntoView({ behavior: 'smooth' });
+});
+}
+window.showAllClubs = function() {
+const mainContent = document.querySelector('main');
+mainContent.innerHTML = `
+<section class="py-20 bg-white min-h-screen">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex items-center mb-8">
+<button onclick="goHome()" class="mr-4 w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-gray-200 transition-colors cursor-pointer">
+<i class="ri-arrow-left-line text-gray-600"></i>
+</button>
+<div>
+<h1 class="text-4xl font-bold text-gray-900 mb-2">All Student Clubs</h1>
+<p class="text-xl text-gray-600">Discover and join one of our active student organizations</p>
+</div>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+${clubsData.map(club => `
+<div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
+<div class="w-12 h-12 ${club.iconBg} rounded-lg flex items-center justify-center mb-4">
+<i class="${club.icon} ${club.iconColor} text-xl"></i>
+</div>
+<h3 class="text-lg font-semibold text-gray-900 mb-3">${club.name}</h3>
+<p class="text-gray-600 mb-4">${club.shortDescription}</p>
+<div class="flex items-center justify-between mb-4">
+<span class="text-sm text-gray-500">${club.members} members</span>
+<button onclick="showClubDetails('${club.id}')" class="text-primary font-medium hover:text-primary/80 transition-colors cursor-pointer">Read More →</button>
+</div>
+<button onclick="joinClub('${club.name}')" class="w-full bg-primary text-white py-2 px-4 rounded-button font-medium hover:bg-primary/90 transition-colors !rounded-button cursor-pointer">
+Join Club
+</button>
+</div>
+`).join('')}
+</div>
+</div>
+</section>
+`;
+};
+window.showClubDetails = function(clubId) {
+const club = clubsData.find(c => c.id === clubId);
+if (!club) return;
+const mainContent = document.querySelector('main');
+mainContent.innerHTML = `
+<section class="py-20 bg-white min-h-screen">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex items-center mb-8">
+<button onclick="showAllClubs()" class="mr-4 w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-gray-200 transition-colors cursor-pointer">
+<i class="ri-arrow-left-line text-gray-600"></i>
+</button>
+<div class="flex items-center">
+<div class="w-16 h-16 ${club.iconBg} rounded-xl flex items-center justify-center mr-4">
+<i class="${club.icon} ${club.iconColor} text-2xl"></i>
+</div>
+<div>
+<h1 class="text-4xl font-bold text-gray-900 mb-2">${club.name}</h1>
+<p class="text-xl text-gray-600">${club.members} active members</p>
+</div>
+</div>
+</div>
+<div class="grid lg:grid-cols-3 gap-8 mb-12">
+<div class="lg:col-span-2">
+<div class="bg-white border border-gray-200 rounded-xl p-8 mb-8">
+<h2 class="text-2xl font-semibold text-gray-900 mb-4">About ${club.name}</h2>
+<p class="text-gray-700 mb-6 leading-relaxed">${club.description}</p>
+<div class="grid md:grid-cols-2 gap-6">
+<div>
+<h3 class="text-lg font-semibold text-gray-900 mb-3">Our Mission</h3>
+<p class="text-gray-600">${club.mission}</p>
+</div>
+<div>
+<h3 class="text-lg font-semibold text-gray-900 mb-3">Our Vision</h3>
+<p class="text-gray-600">${club.vision}</p>
+</div>
+</div>
+</div>
+<div class="bg-white border border-gray-200 rounded-xl p-8">
+<h2 class="text-2xl font-semibold text-gray-900 mb-4">Activities & Programs</h2>
+<ul class="space-y-2">
+${club.activities.map(activity => `
+<li class="flex items-center">
+<i class="ri-check-line text-primary mr-3"></i>
+<span class="text-gray-700">${activity}</span>
+</li>
+`).join('')}
+</ul>
+</div>
+</div>
+<div>
+<div class="bg-white border border-gray-200 rounded-xl p-8 mb-6">
+<h2 class="text-2xl font-semibold text-gray-900 mb-6">Club Leadership</h2>
+<div class="space-y-6">
+<div class="flex items-center p-4 bg-gray-50 rounded-lg">
+<img src="${club.president.photo}" alt="${club.president.name}" class="w-16 h-16 rounded-full object-cover mr-4">
+<div class="flex-1">
+<h3 class="font-semibold text-gray-900">${club.president.name}</h3>
+<p class="text-primary font-medium">President</p>
+<p class="text-sm text-gray-600">${club.president.department}</p>
+</div>
+<button onclick="showLeaderDetails('${clubId}', 'president')" class="bg-primary text-white px-4 py-2 rounded-button text-sm hover:bg-primary/90 transition-colors !rounded-button cursor-pointer">
+Contact
+</button>
+</div>
+<div class="flex items-center p-4 bg-gray-50 rounded-lg">
+<img src="${club.vicePresident.photo}" alt="${club.vicePresident.name}" class="w-16 h-16 rounded-full object-cover mr-4">
+<div class="flex-1">
+<h3 class="font-semibold text-gray-900">${club.vicePresident.name}</h3>
+<p class="text-primary font-medium">Vice President</p>
+<p class="text-sm text-gray-600">${club.vicePresident.department}</p>
+</div>
+<button onclick="showLeaderDetails('${clubId}', 'vicePresident')" class="bg-primary text-white px-4 py-2 rounded-button text-sm hover:bg-primary/90 transition-colors !rounded-button cursor-pointer">
+Contact
+</button>
+</div>
+<div class="flex items-center p-4 bg-gray-50 rounded-lg">
+<img src="${club.secretary.photo}" alt="${club.secretary.name}" class="w-16 h-16 rounded-full object-cover mr-4">
+<div class="flex-1">
+<h3 class="font-semibold text-gray-900">${club.secretary.name}</h3>
+<p class="text-primary font-medium">Secretary</p>
+<p class="text-sm text-gray-600">${club.secretary.department}</p>
+</div>
+<button onclick="showLeaderDetails('${clubId}', 'secretary')" class="bg-primary text-white px-4 py-2 rounded-button text-sm hover:bg-primary/90 transition-colors !rounded-button cursor-pointer">
+Contact
+</button>
+</div>
+</div>
+</div>
+<div class="bg-primary/5 border border-primary/20 rounded-xl p-6">
+<h3 class="text-lg font-semibold text-gray-900 mb-4">Join ${club.name}</h3>
+<p class="text-gray-700 mb-4">Ready to become part of our community?</p>
+<button onclick="joinClub('${club.name}')" class="w-full bg-primary text-white py-3 px-6 rounded-button font-medium hover:bg-primary/90 transition-colors !rounded-button cursor-pointer">
+Join This Club
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+`;
+};
+window.showLeaderDetails = function(clubId, position) {
+const club = clubsData.find(c => c.id === clubId);
+if (!club) return;
+const leader = club[position];
+const positionTitle = position === 'vicePresident' ? 'Vice President' :
+position === 'secretary' ? 'Secretary' : 'President';
+const modalOverlay = document.getElementById('modal-overlay');
+const modalContent = document.getElementById('modal-content');
+modalContent.innerHTML = `
+<div class="text-center">
+<img src="${leader.photo}" alt="${leader.name}" class="w-24 h-24 rounded-full object-cover mx-auto mb-4">
+<h3 class="text-2xl font-semibold text-gray-900 mb-2">${leader.name}</h3>
+<p class="text-primary font-medium text-lg mb-1">${positionTitle}</p>
+<p class="text-gray-600 mb-6">${club.name}</p>
+<div class="text-left space-y-3 mb-6">
+<div class="flex items-center">
+<i class="ri-graduation-cap-line text-gray-400 mr-3"></i>
+<span class="text-gray-700">${leader.department}, ${leader.year}</span>
+</div>
+<div class="flex items-center">
+<i class="ri-mail-line text-gray-400 mr-3"></i>
+<span class="text-gray-700">${leader.email}</span>
+</div>
+<div class="flex items-center">
+<i class="ri-phone-line text-gray-400 mr-3"></i>
+<span class="text-gray-700">${leader.phone}</span>
+</div>
+</div>
+<div class="flex gap-3">
+<button onclick="window.location.href='mailto:${leader.email}'" class="flex-1 bg-primary text-white py-2 px-4 rounded-button font-medium hover:bg-primary/90 transition-colors !rounded-button cursor-pointer">
+Send Email
+</button>
+<button onclick="closeModal()" class="flex-1 border border-gray-300 text-gray-700 py-2 px-4 rounded-button font-medium hover:bg-gray-50 transition-colors !rounded-button cursor-pointer">
+Close
+</button>
+</div>
+</div>
+`;
+modalOverlay.classList.remove('hidden');
+};
+window.showAllAnnouncements = function() {
+const mainContent = document.querySelector('main');
+mainContent.innerHTML = `
+<section class="py-20 bg-white min-h-screen">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex items-center mb-8">
+<button onclick="goHome()" class="mr-4 w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-gray-200 transition-colors cursor-pointer">
+<i class="ri-arrow-left-line text-gray-600"></i>
+</button>
+<div>
+<h1 class="text-4xl font-bold text-gray-900 mb-2">All Announcements</h1>
+<p class="text-xl text-gray-600">Stay updated with the latest news and events</p>
+</div>
+</div>
+<div class="mb-8">
+<div class="flex flex-wrap gap-4">
+<button onclick="filterAnnouncements('all')" class="filter-btn active bg-primary text-white px-4 py-2 rounded-button font-medium !rounded-button cursor-pointer">
+All
+</button>
+<button onclick="filterAnnouncements('Event')" class="filter-btn bg-gray-100 text-gray-700 px-4 py-2 rounded-button font-medium hover:bg-gray-200 transition-colors !rounded-button cursor-pointer">
+Events
+</button>
+<button onclick="filterAnnouncements('Scholarship')" class="filter-btn bg-gray-100 text-gray-700 px-4 py-2 rounded-button font-medium hover:bg-gray-200 transition-colors !rounded-button cursor-pointer">
+Scholarships
+</button>
+<button onclick="filterAnnouncements('News')" class="filter-btn bg-gray-100 text-gray-700 px-4 py-2 rounded-button font-medium hover:bg-gray-200 transition-colors !rounded-button cursor-pointer">
+News
+</button>
+</div>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="announcements-grid">
+${announcementsData.map(announcement => `
+<div class="announcement-item bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow" data-category="${announcement.category}">
+<div class="flex items-center mb-4">
+<div class="w-10 h-10 ${announcement.iconBg} rounded-lg flex items-center justify-center mr-3">
+<i class="${announcement.icon} ${announcement.iconColor}"></i>
+</div>
+<div>
+<span class="text-sm text-gray-500">${announcement.date}</span>
+<div class="text-xs text-primary font-medium">${announcement.category}</div>
+</div>
+</div>
+<h3 class="text-lg font-semibold text-gray-900 mb-3">${announcement.title}</h3>
+<p class="text-gray-600 mb-4">${announcement.shortDescription}</p>
+<button onclick="showAnnouncementDetails('${announcement.id}')" class="text-primary font-medium hover:text-primary/80 transition-colors cursor-pointer">Read Full Article →</button>
+</div>
+`).join('')}
+</div>
+</div>
+</section>
+`;
+};
+window.showAnnouncementDetails = function(announcementId) {
+const announcement = announcementsData.find(a => a.id === announcementId);
+if (!announcement) return;
+const mainContent = document.querySelector('main');
+mainContent.innerHTML = `
+<section class="py-20 bg-white min-h-screen">
+<div class="max-w-4xl mx-auto px-6">
+<div class="flex items-center mb-8">
+<button onclick="showAllAnnouncements()" class="mr-4 w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-gray-200 transition-colors cursor-pointer">
+<i class="ri-arrow-left-line text-gray-600"></i>
+</button>
+<div class="flex items-center">
+<div class="w-12 h-12 ${announcement.iconBg} rounded-xl flex items-center justify-center mr-4">
+<i class="${announcement.icon} ${announcement.iconColor} text-xl"></i>
+</div>
+<div>
+<div class="text-sm text-primary font-medium mb-1">${announcement.category}</div>
+<div class="text-sm text-gray-500">${announcement.date}</div>
+</div>
+</div>
+</div>
+<article class="bg-white border border-gray-200 rounded-xl p-8">
+${announcement.fullContent}
+<div class="mt-8 pt-6 border-t border-gray-200">
+<div class="flex items-center justify-between">
+<div class="text-sm text-gray-500">
+Published on ${announcement.date}
+</div>
+<div class="flex items-center space-x-4">
+<button onclick="shareAnnouncement('${announcement.title}')" class="text-gray-500 hover:text-primary transition-colors cursor-pointer">
+<i class="ri-share-line mr-1"></i>Share
+</button>
+<button onclick="printAnnouncement()" class="text-gray-500 hover:text-primary transition-colors cursor-pointer">
+<i class="ri-printer-line mr-1"></i>Print
+</button>
+</div>
+</div>
+</div>
+</article>
+</div>
+</section>
+`;
+};
+window.filterAnnouncements = function(category) {
+const items = document.querySelectorAll('.announcement-item');
+const buttons = document.querySelectorAll('.filter-btn');
+buttons.forEach(btn => {
+btn.classList.remove('active', 'bg-primary', 'text-white');
+btn.classList.add('bg-gray-100', 'text-gray-700');
+});
+event.target.classList.add('active', 'bg-primary', 'text-white');
+event.target.classList.remove('bg-gray-100', 'text-gray-700');
+items.forEach(item => {
+if (category === 'all' || item.dataset.category === category) {
+item.style.display = 'block';
+} else {
+item.style.display = 'none';
+}
+});
+};
+window.goHome = function() {
+location.reload();
+};
+window.joinClub = function(clubName) {
+showModal('Join Club', `Thank you for your interest in joining ${clubName}! Please visit the Student Union office during office hours with your student ID or contact us at union@astu.edu.et for more information about membership requirements and next steps.`);
+};
+window.closeModal = function() {
+const modalOverlay = document.getElementById('modal-overlay');
+modalOverlay.classList.add('hidden');
+};
+window.shareAnnouncement = function(title) {
+if (navigator.share) {
+navigator.share({
+title: title,
+url: window.location.href
+});
+} else {
+showModal('Share', 'Copy this link to share: ' + window.location.href);
+}
+};
+window.printAnnouncement = function() {
+window.print();
+};
+document.addEventListener('click', function(e) {
+const target = e.target;
+if (target.textContent.includes('Join Club') && !target.onclick) {
+e.preventDefault();
+const clubCard = target.closest('.bg-white');
+const clubName = clubCard.querySelector('h3').textContent;
+joinClub(clubName);
+} else if (target.textContent.includes('Read More') && !target.onclick) {
+e.preventDefault();
+showModal('Read More', 'This announcement will open in a detailed view. Please use the "Read Full Article" button for complete content.');
+} else if (target.textContent.includes('View All Announcements')) {
+e.preventDefault();
+showAllAnnouncements();
+} else if (target.textContent.includes('View All Clubs')) {
+e.preventDefault();
+showAllClubs();
+}
+});
+});
+</script>
+<script id="contact-form-handler">
+document.addEventListener('DOMContentLoaded', function() {
+const contactForm = document.getElementById('contact-form');
+if (!contactForm) return;
+const messageTextarea = contactForm.querySelector('textarea[name="message"]');
+const messageCounter = document.getElementById('message-counter');
+if (messageTextarea && messageCounter) {
+messageTextarea.addEventListener('input', function() {
+const length = this.value.length;
+messageCounter.textContent = length;
+if (length > 500) {
+this.value = this.value.substring(0, 500);
+messageCounter.textContent = 500;
+}
+});
+}
+contactForm.addEventListener('submit', function(e) {
+e.preventDefault();
+const formData = new FormData(this);
+const data = {};
+for (let [key, value] of formData.entries()) {
+data[key] = value;
+}
+if (data.message.length > 500) {
+showModal('Message Too Long', 'Please limit your message to 500 characters or less.');
+return;
+}
+// Add message to admin dashboard data if it exists
+if (window.contactMessages) {
+const newMessage = {
+id: window.contactMessages.length + 1,
+firstName: data.firstName,
+lastName: data.lastName,
+email: data.email,
+phone: data.phone || 'Not provided',
+subject: data.subject,
+message: data.message,
+timestamp: new Date().toISOString().slice(0, 19).replace('T', ' '),
+status: 'unread'
+};
+window.contactMessages.unshift(newMessage);
+}
+showModal('Message Sent!', 'Thank you for contacting us, ' + data.firstName + '! We have received your message and will respond within 24 hours.');
+this.reset();
+if (messageCounter) {
+messageCounter.textContent = '0';
+}
+});
+});
+</script>
+<script id="search-functionality">
+document.addEventListener('DOMContentLoaded', function() {
+const searchData = [
+{
+type: 'club',
+title: 'Tech Innovation Club',
+description: 'Explore cutting-edge technology, participate in hackathons, and build innovative solutions.',
+action: () => { showAllClubs(); setTimeout(() => showClubDetails('tech-innovation'), 100); }
+},
+{
+type: 'club',
+title: 'Environmental Society',
+description: 'Promote sustainability, organize cleanup drives, and advocate for environmental protection.',
+action: () => { showAllClubs(); setTimeout(() => showClubDetails('environmental-society'), 100); }
+},
+{
+type: 'announcement',
+title: 'Annual Student Elections',
+description: 'Nominations are now open for the 2024-2025 Student Union executive positions.',
+action: () => { showAllAnnouncements(); setTimeout(() => showAnnouncementDetails('student-elections'), 100); }
+},
+{
+type: 'contact',
+title: 'Contact Student Union',
+description: 'Get in touch with our team for support, suggestions, or to report issues.',
+action: () => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })
+}
+];
+function performSearch(query) {
+if (!query || query.length < 2) return [];
+const lowerQuery = query.toLowerCase();
+return searchData.filter(item =>
+item.title.toLowerCase().includes(lowerQuery) ||
+item.description.toLowerCase().includes(lowerQuery) ||
+item.type.toLowerCase().includes(lowerQuery)
+).slice(0, 5);
+}
+function showSearchResults(results, query) {
+if (results.length === 0) {
+showModal('No Results Found', `No results found for "${query}". Try searching for clubs, announcements, leadership, or contact information.`);
+return;
+}
+const resultsHtml = results.map((result, index) => `
+<div class="border-b border-gray-200 pb-3 mb-3 last:border-b-0 last:pb-0 last:mb-0">
+<div class="text-xs text-primary font-medium mb-1">${result.type.toUpperCase()}</div>
+<h4 class="font-semibold text-gray-900 mb-1">${result.title}</h4>
+<p class="text-sm text-gray-600 mb-2">${result.description}</p>
+<button onclick="searchAction${index}()" class="text-primary text-sm font-medium hover:text-primary/80">View Details →</button>
+</div>
+`).join('');
+const modalOverlay = document.getElementById('modal-overlay');
+const modalContent = document.getElementById('modal-content');
+modalContent.innerHTML = `
+<div class="text-left max-w-lg">
+<h3 class="text-xl font-semibold text-gray-900 mb-4">Search Results for "${query}"</h3>
+<div class="max-h-80 overflow-y-auto">${resultsHtml}</div>
+<div class="mt-6 text-center">
+<button onclick="closeModal()" class="bg-gray-100 text-gray-700 px-6 py-2 rounded-button hover:bg-gray-200 transition-colors cursor-pointer !rounded-button">Close</button>
+</div>
+</div>
+`;
+results.forEach((result, index) => {
+window[`searchAction${index}`] = result.action;
+});
+modalOverlay.classList.remove('hidden');
+}
+const searchInputs = document.querySelectorAll('#main-search, #mobile-search');
+searchInputs.forEach(input => {
+input.addEventListener('keypress', function(e) {
+if (e.key === 'Enter') {
+const query = this.value.trim();
+if (query) {
+const results = performSearch(query);
+showSearchResults(results, query);
+this.value = '';
+}
+}
+});
+});
+});
+</script>
+<script id="intersection-observer">
+document.addEventListener('DOMContentLoaded', function() {
+const observerOptions = {
+threshold: 0.1,
+rootMargin: '0px 0px -50px 0px'
+};
+const observer = new IntersectionObserver(function(entries) {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add('visible');
+}
+});
+}, observerOptions);
+const elementsToObserve = document.querySelectorAll('.intersection-observer');
+elementsToObserve.forEach(el => {
+observer.observe(el);
+});
+});
+</script>
+<script id="ai-assistant">
+document.addEventListener('DOMContentLoaded', function() {
+const aiAssistantBtn = document.getElementById('ai-assistant-btn');
+const aiChatWindow = document.getElementById('ai-chat-window');
+const closeAiChat = document.getElementById('close-ai-chat');
+const aiInput = document.getElementById('ai-input');
+const sendAiMessage = document.getElementById('send-ai-message');
+const chatMessages = document.getElementById('chat-messages');
+const quickQuestions = document.querySelectorAll('.quick-question');
+const aiResponses = {
+'how do i join a club': 'To join a club, you can visit our clubs section, browse available clubs, and click "Join Club" on any club that interests you. You can also visit the Student Union office during office hours with your student ID.',
+'what events are coming up': 'We have several exciting events coming up including the Annual Student Elections (nominations due Dec 1st), Cultural Festival (Dec 5-7), and various scholarship opportunities. Check our announcements section for more details!',
+'contact information': 'You can reach us at:\n📧 union@astu.edu.et\n📞 +251 11 646 3200\n📍 Student Union Building, 2nd Floor, ASTU Campus\n🕐 Office Hours: Mon-Fri 8AM-5PM, Sat 9AM-2PM',
+'scholarships': 'We offer merit-based scholarships including Academic Excellence ($2,000/semester), Leadership Impact ($1,500/semester), Community Service ($1,000/semester), and Innovation & Research ($2,500/semester). Applications are due November 30th.',
+'student union': 'The ASTU Student Union represents student interests, organizes campus events, and fosters community building. We advocate for students in university decisions and provide various services to enhance your university experience.',
+'leadership': 'Our current leadership includes President Daniel Tadesse (Computer Engineering), Vice President Meron Assefa (Business Administration), Treasurer Yonas Bekele (Mechanical Engineering), and General Secretary Hanan Mohammed (Information Systems).',
+'default': 'I can help you with information about clubs, events, contact details, scholarships, and general Student Union inquiries. Feel free to ask me anything specific!'
+};
+function getAIResponse(message) {
+const lowerMessage = message.toLowerCase();
+for (let key in aiResponses) {
+if (lowerMessage.includes(key)) {
+return aiResponses[key];
+}
+}
+if (lowerMessage.includes('club')) {
+return aiResponses['how do i join a club'];
+} else if (lowerMessage.includes('event') || lowerMessage.includes('festival') || lowerMessage.includes('election')) {
+return aiResponses['what events are coming up'];
+} else if (lowerMessage.includes('contact') || lowerMessage.includes('phone') || lowerMessage.includes('email')) {
+return aiResponses['contact information'];
+} else if (lowerMessage.includes('scholarship') || lowerMessage.includes('financial')) {
+return aiResponses['scholarships'];
+} else if (lowerMessage.includes('who') || lowerMessage.includes('president') || lowerMessage.includes('leader')) {
+return aiResponses['leadership'];
+}
+return aiResponses['default'];
+}
+function addMessage(message, isUser = false) {
+const messageDiv = document.createElement('div');
+messageDiv.className = 'message flex items-start';
+messageDiv.innerHTML = `
+${!isUser ? `
+<div class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+<i class="ri-robot-line text-primary text-sm"></i>
+</div>
+` : ''}
+<div class="${isUser ? 'bg-primary text-white ml-auto' : 'bg-gray-100'} rounded-lg p-3 max-w-[250px] ${isUser ? 'mr-3' : ''}">
+<p class="text-sm ${isUser ? 'text-white' : 'text-gray-800'}" style="white-space: pre-line;">${message}</p>
+</div>
+${isUser ? `
+<div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center ml-3 flex-shrink-0">
+<i class="ri-user-line text-white text-sm"></i>
+</div>
+` : ''}
+`;
+chatMessages.appendChild(messageDiv);
+chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+function showTypingIndicator() {
+const typingDiv = document.createElement('div');
+typingDiv.className = 'message flex items-start typing-message';
+typingDiv.innerHTML = `
+<div class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+<i class="ri-robot-line text-primary text-sm"></i>
+</div>
+<div class="bg-gray-100 rounded-lg p-3">
+<div class="typing-indicator">
+<div class="typing-dot"></div>
+<div class="typing-dot"></div>
+<div class="typing-dot"></div>
+</div>
+</div>
+`;
+chatMessages.appendChild(typingDiv);
+chatMessages.scrollTop = chatMessages.scrollHeight;
+return typingDiv;
+}
+function sendMessage() {
+const message = aiInput.value.trim();
+if (!message) return;
+addMessage(message, true);
+aiInput.value = '';
+const typingIndicator = showTypingIndicator();
+setTimeout(() => {
+typingIndicator.remove();
+const response = getAIResponse(message);
+addMessage(response);
+}, 1500);
+}
+aiAssistantBtn.addEventListener('click', function() {
+aiChatWindow.classList.toggle('hidden');
+if (!aiChatWindow.classList.contains('hidden')) {
+aiChatWindow.classList.add('show');
+aiInput.focus();
+} else {
+aiChatWindow.classList.remove('show');
+}
+});
+closeAiChat.addEventListener('click', function() {
+aiChatWindow.classList.add('hidden');
+aiChatWindow.classList.remove('show');
+});
+sendAiMessage.addEventListener('click', sendMessage);
+aiInput.addEventListener('keypress', function(e) {
+if (e.key === 'Enter') {
+sendMessage();
+}
+});
+quickQuestions.forEach(btn => {
+btn.addEventListener('click', function() {
+const question = this.dataset.question;
+aiInput.value = question;
+sendMessage();
+});
+});
+document.addEventListener('click', function(e) {
+if (!aiChatWindow.contains(e.target) && !aiAssistantBtn.contains(e.target)) {
+if (!aiChatWindow.classList.contains('hidden')) {
+aiChatWindow.classList.add('hidden');
+aiChatWindow.classList.remove('show');
+}
+}
+});
+});
+</script>
+<script id="enhanced-animations">
+document.addEventListener('DOMContentLoaded', function() {
+// Add smooth scrolling with offset for fixed header
+const links = document.querySelectorAll('a[href^="#"]');
+links.forEach(link => {
+link.addEventListener('click', function(e) {
+e.preventDefault();
+const targetId = this.getAttribute('href');
+const targetElement = document.querySelector(targetId);
+if (targetElement) {
+const headerHeight = 80;
+const elementPosition = targetElement.getBoundingClientRect().top;
+const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+window.scrollTo({
+top: offsetPosition,
+behavior: 'smooth'
+});
+const mobileMenu = document.getElementById('mobile-menu');
+if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+mobileMenu.classList.add('hidden');
+}
+}
+});
+});
+// Add hover effects to buttons
+const buttons = document.querySelectorAll('button, .cursor-pointer');
+buttons.forEach(btn => {
+btn.addEventListener('mouseenter', function() {
+this.style.transform = 'translateY(-2px)';
+});
+btn.addEventListener('mouseleave', function() {
+this.style.transform = 'translateY(0)';
+});
+});
+// Parallax effect for hero section
+window.addEventListener('scroll', function() {
+const scrolled = window.pageYOffset;
+const hero = document.getElementById('home');
+if (hero) {
+const rate = scrolled * -0.5;
+hero.style.transform = 'translateY(' + rate + 'px)';
+}
+});
+// Counter animation for numbers
+function animateCounter(element, target) {
+let current = 0;
+const increment = target / 100;
+const timer = setInterval(() => {
+current += increment;
+if (current >= target) {
+current = target;
+clearInterval(timer);
+}
+element.textContent = Math.floor(current);
+}, 20);
+}
+// Animate counters when they come into view
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+const counters = entry.target.querySelectorAll('.counter');
+counters.forEach(counter => {
+const target = parseInt(counter.dataset.target);
+animateCounter(counter, target);
+});
+}
+});
+});
+document.querySelectorAll('.stats-section').forEach(section => {
+observer.observe(section);
+});
+});
+</script>
+</body>
+</html>
